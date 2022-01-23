@@ -1,5 +1,7 @@
 import tkinter as tk
 
+import utils
+
 # TODO : debug print picked options when this will be back
 # TODO : sprites
 # TODO : text len if SNES bug
@@ -58,8 +60,7 @@ inputs['seed'].grid(row=m, column=1)
 buttons['seed'] = tk.Button(
     frames['main'],
     text='...',
-    width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['seed'], inputs['seed'], 'file')
+    width=BTN_WIDTH
 )
 buttons['seed'].grid(row=m, column=2)
 
@@ -86,8 +87,7 @@ inputs['rom'].grid(row=m, column=1)
 buttons['rom'] = tk.Button(
     frames['main'],
     text='...',
-    width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['rom'], inputs['rom'], 'file')
+    width=BTN_WIDTH
 )
 buttons['rom'].grid(row=m, column=2)
 
@@ -114,8 +114,7 @@ inputs['mode'][0] = tk.Radiobutton(
     frames['mode'],
     text='USB transfer (FXPak / SD2SNES)',
     variable=variables['mode'],
-    value=0,
-    # command=lambda: utils.switch_frame(frames['transfer'].winfo_children(), frames['copy'].winfo_children())
+    value=0
 )
 inputs['mode'][0].grid(row=0, column=0)
 
@@ -123,8 +122,7 @@ inputs['mode'][1] = tk.Radiobutton(
     frames['mode'],
     text='Copy file',
     variable=variables['mode'],
-    value=1,
-    # command=lambda: utils.switch_frame(frames['copy'].winfo_children(), frames['transfer'].winfo_children())
+    value=1
 )
 inputs['mode'][1].grid(row=0, column=1)
 
@@ -201,8 +199,7 @@ inputs['emulator'].grid(row=m, column=1)
 buttons['emulator'] = tk.Button(
     frames['copy'],
     text='...',
-    width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['emulator'], inputs['emulator'], 'file')
+    width=BTN_WIDTH
 )
 buttons['emulator'].grid(row=m, column=2)
 
@@ -230,8 +227,7 @@ inputs['folder-path'].grid(row=m, column=1)
 buttons['folder-path'] = tk.Button(
     frames['copy'],
     text='...',
-    width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['folder-path'], inputs['folder-path'], 'dir')
+    width=BTN_WIDTH
 )
 buttons['folder-path'].grid(row=m, column=2)
 
@@ -259,8 +255,7 @@ inputs['retroarch-core'].grid(row=m, column=1)
 buttons['retroarch-core'] = tk.Button(
     frames['copy'],
     text='...',
-    width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['retroarch-core'], inputs['retroarch-core'],'file')
+    width=BTN_WIDTH
 )
 buttons['retroarch-core'].grid(row=m, column=2)
 
@@ -296,8 +291,7 @@ inputs['timer'].grid(row=m, column=1)
 buttons['timer'] = tk.Button(
     frames['misc'],
     text='...',
-    width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['timer'], inputs['timer'], 'file')
+    width=BTN_WIDTH
 )
 buttons['timer'].grid(row=m, column=2)
 
@@ -313,7 +307,7 @@ labels['tracker'] = tk.Label(
 labels['tracker'].grid(row=m, column=0)
 
 variables['tracker'] = tk.StringVar()
-defaults['tracker'] = 'Optional, will use Dunka\'s tracker if left empty and start tracker is checked'
+defaults['tracker'] = 'Optional. Will use Dunka\'s if empty and tracker autostart is checked'
 inputs['tracker'] = tk.Entry(
     frames['misc'],
     width=ENTRY_WIDTH,
@@ -325,8 +319,7 @@ inputs['tracker'].grid(row=m, column=1)
 buttons['tracker'] = tk.Button(
     frames['misc'],
     text='...',
-    width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['tracker'], inputs['tracker'], 'file')
+    width=BTN_WIDTH
 )
 buttons['tracker'].grid(row=m, column=2)
 
@@ -355,7 +348,6 @@ buttons['usb-interface'] = tk.Button(
     frames['misc'],
     text='...',
     width=BTN_WIDTH,
-    # command=lambda: utils.set_path(variables['usb-interface'], inputs['usb-interface'], 'file')
 )
 buttons['usb-interface'].grid(row=m, column=2)
 
@@ -769,7 +761,7 @@ inputs['msu'] = tk.OptionMenu(
     variables['msu'],
     *['Default', 'Random']
 )
-inputs['msu'].config(width=ENTRY_WIDTH - 8)
+inputs['msu'].config(width=ENTRY_WIDTH - 7)
 inputs['msu'].grid(row=0, column=1)
 
 buttons['msu'] = tk.Button(
@@ -807,7 +799,7 @@ labels['log'] = tk.Label(
 labels['log'].grid(row=n, sticky=tk.W)
 
 # Main loop
-# utils.load_cfg(variables)
+utils.config(variables, 0)  # Load config
 
 labels['rom'].config(state='disabled')
 inputs['rom'].config(state='disabled')
@@ -819,18 +811,68 @@ for child in frames['gameoptions'].winfo_children():
 for child in frames['sprites'].winfo_children():
     child.configure(state='disabled')
 
-# for x in defaults:
-#     utils.set_default_text(inputs[x], defaults[x])
+if variables['mode'].get() == 0:
+    utils.switch_frame(frames['transfer'].winfo_children(), frames['copy'].winfo_children())
+else:
+    utils.switch_frame(frames['copy'].winfo_children(), frames['transfer'].winfo_children())
 
-# if variables['mode'].get() == 0:
-#     utils.switch_frame(frames['transfer'].winfo_children(), frames['copy'].winfo_children())
-# else:
-#     utils.switch_frame(frames['copy'].winfo_children(), frames['transfer'].winfo_children())
+for x in defaults:
+    utils.set_default_text(inputs[x], defaults[x])
 
 # buttons['run'].config(command=lambda: utils.run(variables, inputs['fxpak-path'], defaults, labels['log']))
 # buttons['detect'].config(
 #     command=lambda: transfer.detect_fxpak(variables['usb-interface'], inputs['fxpak-path'], variables['uri'],
 #                                           labels['detect']))
+
+# Set commands
+buttons['seed'].configure(command=lambda: utils.set_path(
+    variables['seed'],
+    inputs['seed'],
+    0
+))
+buttons['rom'].configure(command=lambda: utils.set_path(
+    variables['rom'],
+    inputs['rom'],
+    0
+))
+buttons['emulator'].configure(command=lambda: utils.set_path(
+    variables['emulator'],
+    inputs['emulator'],
+    0
+))
+buttons['folder-path'].configure(command=lambda: utils.set_path(
+    variables['folder-path'],
+    inputs['folder-path'],
+    1
+))
+buttons['retroarch-core'].configure(command=lambda: utils.set_path(
+    variables['retroarch-core'],
+    inputs['retroarch-core'],
+    0
+))
+buttons['timer'].configure(command=lambda: utils.set_path(
+    variables['timer'],
+    inputs['timer'],
+    0
+))
+buttons['tracker'].configure(command=lambda: utils.set_path(
+    variables['tracker'],
+    inputs['tracker'],
+    0
+))
+buttons['usb-interface'].configure(command=lambda: utils.set_path(
+    variables['usb-interface'],
+    inputs['usb-interface'],
+    0
+))
+inputs['mode'][0].configure(command=lambda: utils.switch_frame(
+    frames['transfer'].winfo_children(),
+    frames['copy'].winfo_children()
+))
+inputs['mode'][1].configure(command=lambda: utils.switch_frame(
+    frames['copy'].winfo_children(),
+    frames['transfer'].winfo_children()
+))
 
 # sprites.build_dict()
 # sprites.load_sprites()
@@ -838,5 +880,5 @@ for child in frames['sprites'].winfo_children():
 
 window.mainloop()
 
-# utils.save_cfg(variables)
+utils.config(variables, 1)
 # sprites.save_sprites()
