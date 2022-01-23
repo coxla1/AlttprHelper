@@ -1,8 +1,13 @@
 import json
 import threading
 import subprocess
-
+import os
+import logging as lg
 from tkinter import filedialog as fd
+
+import fxpak
+
+msupacks = []
 
 
 # Thread class with a command line in argument
@@ -23,6 +28,7 @@ class Thread(threading.Thread):
         threading.Thread.join(self)
         if self.exc:
             raise self.exc
+        return -1
 
 
 # Config file load and save function
@@ -97,3 +103,42 @@ def switch_frame(enable_children, disable_children):
         child.configure(state='normal')
     for child in disable_children:
         child.configure(state='disabled')
+
+
+# Refresh list of MSU function
+def refresh(variables, msu_list, log):
+    global msupacks
+    msupacks = []
+
+    if variables['mode'].get() == 0:  # USB transfer
+        try:
+            msupacks = fxpak.subdirectories(variables['uri'].get(), variables['fxpak-path'].get())
+        except Exception as e:
+            lg.error(f'Could not find the MSU directory : {e}')
+            log.config(text='Could not find the MSU directory')
+            return -1
+
+    else:  # Copy file
+        try:
+            packs = os.listdir(variables['folder-path'].get())
+            for msu in packs:
+                if os.path.isdir(msu):
+                    msupacks.append(msu)
+        except FileNotFoundError as e:
+            lg.error(f'Could not find the MSU directory : {e}')
+            log.config(text='Could not find the MSU directory')
+            return -1
+
+    msupacks.sort()
+
+    msu_list.children['menu'].delete(0, 'end')
+    for msu in ['Default', 'Random']:
+        msu_list.children['menu'].add_command(label=msu, command=lambda y=msu: variables['msu'].set(y))
+
+    for msu in msupacks:
+        msu_list.children['menu'].add_command(label=msu, command=lambda y=msu: variables['msu'].set(y))
+
+    lg.info(f'Found {len(msupacks)} MSU packs')
+    log.config(text=f'Found {len(msupacks)} MSU packs')
+
+    msupacks.append('Default')

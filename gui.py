@@ -10,7 +10,7 @@ import fxpak
 # TODO : exclude everything that is not a folder when scanning MSU dir
 #  (maybe -> how to differentiate what is a folder and what is a file ?)
 # TODO : window too big now, use tabs
-# TODO : assigner les commandes des boutons en bas des fichiers
+# TODO : put return in every try
 
 m, n = 0, 0
 
@@ -27,7 +27,7 @@ variables = {}
 defaults = {}
 
 lg.basicConfig(
-    filename='log.txt',
+    filename='helper.log',
     encoding='utf-8',
     level=lg.DEBUG,
     format='%(asctime)s %(levelname)-8s %(message)s')
@@ -800,6 +800,14 @@ labels['log'].grid(row=n, sticky=tk.W)
 # Main loop
 utils.config(variables, 0)  # Load config
 
+for x in defaults:
+    utils.set_default_text(inputs[x], defaults[x])
+
+if variables['mode'].get() == 0:
+    utils.switch_frame(frames['transfer'].winfo_children(), frames['copy'].winfo_children())
+else:
+    utils.switch_frame(frames['copy'].winfo_children(), frames['transfer'].winfo_children())
+
 labels['rom'].config(state='disabled')
 inputs['rom'].config(state='disabled')
 buttons['rom'].config(state='disabled')
@@ -809,14 +817,6 @@ for child in frames['gameoptions'].winfo_children():
     child.configure(state='disabled')
 for child in frames['sprites'].winfo_children():
     child.configure(state='disabled')
-
-if variables['mode'].get() == 0:
-    utils.switch_frame(frames['transfer'].winfo_children(), frames['copy'].winfo_children())
-else:
-    utils.switch_frame(frames['copy'].winfo_children(), frames['transfer'].winfo_children())
-
-for x in defaults:
-    utils.set_default_text(inputs[x], defaults[x])
 
 # buttons['run'].config(command=lambda: utils.run(variables, inputs['fxpak-path'], defaults, labels['log']))
 
@@ -873,8 +873,11 @@ buttons['detect'].config(command=lambda: fxpak.detect(
     variables,
     labels['log']
 ))
-# buttons['msu'].config(command=lambda: utils.refresh())
-# TODO : rewrite refresh msu (less variables)
+buttons['msu'].config(command=lambda: utils.refresh(
+    variables,
+    inputs['msu'],
+    labels['log']
+))
 
 
 # sprites.build_dict()

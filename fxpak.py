@@ -8,6 +8,7 @@ import resources.sni_pb2_grpc as sni_grpc
 
 
 # TODO : comment cleanup (list subdirectories)
+# TODO : check that this still works
 # Detect FXPak function
 def detect(variables, log):
     # Start SNI and wait for it
@@ -21,7 +22,7 @@ def detect(variables, log):
             t_sni.join()
         except Exception as e:
             lg.error(f'SNI not found : {e}')
-            log.config(text='SNI not found, check your path')
+            log.config(text='Could not find SNI, check your path')
             return -1
 
     cnt = 0
@@ -33,8 +34,8 @@ def detect(variables, log):
     sock.close()
 
     if cnt > max_cnt:
-        lg.error('Could not reach port 8191, try to close SNI and check your path')
-        log.config(text='Could not reach port 8191, try to close SNI and check your path')
+        lg.error('Could not reach port 8191')
+        log.config(text='Could not reach port 8191, make sure SNI and QUSB2SNES are not running at the same time')
         return -1
 
     # Look for FXPak
@@ -52,8 +53,10 @@ def detect(variables, log):
             break
 
     if uri:
+        lg.info(f'FXPak URI : {name}')
         log.config(text=f'FXPak found on {name}')
     else:
+        lg.warning(f'No FXPak found')
         log.config(text='No FXPak found')
         return -1
 
@@ -85,3 +88,20 @@ def detect(variables, log):
     # entries.sort()
     # for x in entries:
     #     input_fxpakfolders.insert(END, x)
+
+
+# TODO : check that it works
+# List folders in a given path function
+def subdirectories(uri, path):
+    path_subdirectories = []
+
+    with grpc.insecure_channel('localhost:8191') as channel:
+        stub = sni_grpc.DeviceFilesystemStub(channel)
+        response = stub.ReadDirectory(sni.ReadDirectoryRequest(uri=uri, path=path))
+        channel.close()
+
+    for x in response.entries:
+        if x.type == 0 and x.name not in ['.', '..']:
+            path_subdirectories.append(f'{x.name}')
+
+    return path_subdirectories
