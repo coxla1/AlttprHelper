@@ -7,17 +7,21 @@ import resources.sni_pb2 as sni
 import resources.sni_pb2_grpc as sni_grpc
 
 
+# TODO : comment cleanup (list subdirectories)
+# Detect FXPak function
 def detect(variables, log):
     # Start SNI and wait for it
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     flag = sock.connect_ex(('localhost', 8191))
     if flag:
+        t_sni = utils.Thread(variables['usb-interface'].get())
+        t_sni.start()
+
         try:
-            thread_sni = utils.Thread(variables['usb-interface'].get())
-            thread_sni.start()
-        except FileNotFoundError as e:
-            lg.error(e)
-            log.config(text='Error while starting SNI, check your path')
+            t_sni.join()
+        except Exception as e:
+            lg.error(f'SNI not found : {e}')
+            log.config(text='SNI not found, check your path')
             return -1
 
     cnt = 0

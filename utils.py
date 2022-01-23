@@ -11,9 +11,18 @@ class Thread(threading.Thread):
         super().__init__()
         self.cmd = cmd
         self.daemon = True
+        self.exc = None
 
     def run(self):
-        subprocess.call(self.cmd)
+        try:
+            subprocess.call(self.cmd)
+        except FileNotFoundError as e:
+            self.exc = e
+
+    def join(self, **kwargs):
+        threading.Thread.join(self)
+        if self.exc:
+            raise self.exc
 
 
 # Config file load and save function

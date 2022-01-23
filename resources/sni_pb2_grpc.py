@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import sni_pb2 as sni__pb2
+import resources.sni_pb2 as sni__pb2
 
 
 class DevicesStub(object):

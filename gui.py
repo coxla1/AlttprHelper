@@ -26,7 +26,11 @@ buttons = {}
 variables = {}
 defaults = {}
 
-lg.basicConfig(filename='log.txt', encoding='utf-8', level=lg.DEBUG)
+lg.basicConfig(
+    filename='log.txt',
+    encoding='utf-8',
+    level=lg.DEBUG,
+    format='%(asctime)s %(levelname)-8s %(message)s')
 
 window = tk.Tk()
 
