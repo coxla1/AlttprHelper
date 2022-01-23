@@ -42,7 +42,6 @@ def detect(variables, log):
     with grpc.insecure_channel('localhost:8191') as channel:
         stub = sni_grpc.DevicesStub(channel)
         response = stub.ListDevices(sni.DevicesRequest())
-        channel.close()
 
     uri = None
     for x in response.devices:
@@ -91,17 +90,31 @@ def detect(variables, log):
 
 
 # TODO : check that it works
-# List folders in a given path function
-def subdirectories(uri, path):
-    path_subdirectories = []
+# List folder content function
+def dir_content(uri, path, t):
+    content = []
 
     with grpc.insecure_channel('localhost:8191') as channel:
         stub = sni_grpc.DeviceFilesystemStub(channel)
         response = stub.ReadDirectory(sni.ReadDirectoryRequest(uri=uri, path=path))
-        channel.close()
 
+    # Types : 0 = directory, 1 = files
     for x in response.entries:
-        if x.type == 0 and x.name not in ['.', '..']:
-            path_subdirectories.append(f'{x.name}')
+        if x.type == t and x.name not in ['.', '..']:
+            content.append(f'{x.name}')
 
-    return path_subdirectories
+    return content
+
+
+# Send file function (data must be a byte feed)
+def send_file(uri, path, data):
+    with grpc.insecure_channel('localhost:8191') as channel:
+        stub = sni_grpc.DeviceFilesystemStub(channel)
+        stub.PutFile(sni.PutFileRequest(uri=uri, path=path, data=data))
+
+
+# Boot ROM function
+def boot_rom(uri, path):
+    with grpc.insecure_channel('localhost:8191') as channel:
+        stub = sni_grpc.DeviceFilesystemStub(channel)
+        stub.BootFile(sni.BootFileRequest(uri=uri, path=path))
