@@ -1,6 +1,8 @@
 import tkinter as tk
+import logging as lg
 
 import utils
+import fxpak
 
 # TODO : debug print picked options when this will be back
 # TODO : sprites
@@ -24,12 +26,14 @@ buttons = {}
 variables = {}
 defaults = {}
 
+lg.basicConfig(filename='log.txt', encoding='utf-8', level=lg.DEBUG)
+
 window = tk.Tk()
 
 # Window settings
 window.title('ALTTPR Helper')
 window.resizable(width=False, height=False)
-window.iconbitmap('data/icon.ico')
+window.iconbitmap('resources/icon.ico')
 
 # Main frame
 frames['main'] = tk.LabelFrame(
@@ -767,17 +771,8 @@ inputs['msu'].grid(row=0, column=1)
 buttons['msu'] = tk.Button(
     frames['run'],
     text='Refresh',
-    width=BTN_WIDTH,
-    # command=lambda: utils.refresh_msu(
-    #     variables['folder-path'],
-    #     inputs['msu'],
-    #     variables['msu'],
-    #     variables['mode'],
-    #     variables['uri'],
-    #     variables['fxpak-path']
-    # )
+    width=BTN_WIDTH
 )
-# TODO : rewrite refresh msu (less variables)
 buttons['msu'].grid(row=0, column=2)
 
 n += 1
@@ -820,9 +815,6 @@ for x in defaults:
     utils.set_default_text(inputs[x], defaults[x])
 
 # buttons['run'].config(command=lambda: utils.run(variables, inputs['fxpak-path'], defaults, labels['log']))
-# buttons['detect'].config(
-#     command=lambda: transfer.detect_fxpak(variables['usb-interface'], inputs['fxpak-path'], variables['uri'],
-#                                           labels['detect']))
 
 # Set commands
 buttons['seed'].configure(command=lambda: utils.set_path(
@@ -873,6 +865,13 @@ inputs['mode'][1].configure(command=lambda: utils.switch_frame(
     frames['copy'].winfo_children(),
     frames['transfer'].winfo_children()
 ))
+buttons['detect'].config(command=lambda: fxpak.detect(
+    variables,
+    labels['log']
+))
+# buttons['msu'].config(command=lambda: utils.refresh())
+# TODO : rewrite refresh msu (less variables)
+
 
 # sprites.build_dict()
 # sprites.load_sprites()

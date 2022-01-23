@@ -1,13 +1,26 @@
 import json
+import threading
+import subprocess
 
 from tkinter import filedialog as fd
+
+
+# Thread class with a command line in argument
+class Thread(threading.Thread):
+    def __init__(self, cmd):
+        super().__init__()
+        self.cmd = cmd
+        self.daemon = True
+
+    def run(self):
+        subprocess.call(self.cmd)
 
 
 # Config file load and save function
 def config(variables, mode):
     if mode == 0:  # Load
         try:
-            with open('data/config.json', 'r') as cfgfile:
+            with open('config.json', 'r') as cfgfile:
                 cfg = json.load(cfgfile)
         except FileNotFoundError:
             cfg = {}
@@ -34,7 +47,7 @@ def config(variables, mode):
             else:
                 variables[var].set(cfg[var])
     else:  # Save
-        with open('data/config.json', 'w') as cfgfile:
+        with open('config.json', 'w') as cfgfile:
             json.dump(cfg, cfgfile, indent=4)
 
 
@@ -46,9 +59,9 @@ def set_default_text(entry, text):
             e.insert(0, '')
             e.config(fg='black')
 
-    def on_focusout(e, default_text):
+    def on_focusout(e, default):
         if e.get() == '':
-            e.insert(0, default_text)
+            e.insert(0, default)
             e.config(fg='grey')
 
     entry.bind('<FocusIn>', lambda event: on_entry_click(entry))
