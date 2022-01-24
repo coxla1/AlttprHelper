@@ -366,7 +366,7 @@ def run(variables, defaults, log):
                 log.config(text=f'No hash found (likely if the game was not generated on alttpr.com)')
 
     # Keydrop information
-    if variables['dunka-tracker']['door'].get() == 'Crossed/Keydrop':
+    if variables['autostart']['keydrop'].get():
         keycount = 'Number of SK in each dungeon\n'
         keycount += '(Does not apply if crossed door turned on)\n'
         keycount += 'Hyrule Castle: 4\n'

@@ -6,11 +6,8 @@ import fxpak
 
 # TODO : debug print picked options when this will be back
 # TODO : sprites
-# TODO : text len if SNES bug
-# TODO : exclude everything that is not a folder when scanning MSU dir
-#  (maybe -> how to differentiate what is a folder and what is a file ?)
 # TODO : window too big now, use tabs
-# TODO : put return in every try
+# TODO : add options for entrance tracker, door tracker...
 
 m, n = 0, 0
 
@@ -155,10 +152,6 @@ labels['fxpak-path'].grid(row=m, column=0)
 
 variables['fxpak-path'] = tk.StringVar()
 defaults['fxpak-path'] = 'e.g. /alttp/msu, not case sensitive'
-# TODO : check if there is a / at the end of the path
-# TODO : use os.path.join instead of weird things i did in utils
-# TODO : transfer detect log to actual log
-# TODO : use logging instead of print
 inputs['fxpak-path'] = tk.Entry(
     frames['transfer'],
     width=ENTRY_WIDTH,
@@ -421,6 +414,19 @@ inputs['autostart']['usb-interface'] = tk.Checkbutton(
     offvalue=0
 )
 inputs['autostart']['usb-interface'].grid(row=0, column=m)
+
+m += 1
+
+# - Keydrop key count
+variables['autostart']['keydrop'] = tk.IntVar()
+inputs['autostart']['keydrop'] = tk.Checkbutton(
+    frames['autostart'],
+    text='SNI / QUSB2SNES',
+    variable=variables['autostart']['keydrop'],
+    onvalue=1,
+    offvalue=0
+)
+inputs['autostart']['keydrop'].grid(row=0, column=m)
 
 m, n = 0, n + 1
 

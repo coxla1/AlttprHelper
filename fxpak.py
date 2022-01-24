@@ -7,7 +7,6 @@ import resources.sni_pb2 as sni
 import resources.sni_pb2_grpc as sni_grpc
 
 
-# TODO : comment cleanup (list subdirectories)
 # TODO : check that this still works
 # Detect FXPak function
 def detect(variables, log):
@@ -61,35 +60,7 @@ def detect(variables, log):
 
     variables['uri'].set(uri)
 
-    # # List folders
-    # with grpc.insecure_channel('localhost:8191') as channel:
-    #     stub = sni_grpc.DeviceFilesystemStub(channel)
-    #
-    #     entries = ['']
-    #     i, j = 0, 1
-    #     flag = True
-    #
-    #     while flag:
-    #         k = 0
-    #         for dir in entries[i:j]:
-    #             current_dir = get_subdirectories(stub, uri, dir)
-    #             entries.extend(current_dir)
-    #             k += len(current_dir)
-    #         i = j
-    #         j += k
-    #
-    #         if k == 0:
-    #             flag = False
-    #
-    #     channel.close()
 
-    # entries[0] = '/'
-    # entries.sort()
-    # for x in entries:
-    #     input_fxpakfolders.insert(END, x)
-
-
-# TODO : check that it works
 # List folder content function
 def dir_content(uri, path, t):
     content = []
