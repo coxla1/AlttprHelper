@@ -1,14 +1,15 @@
 import json
-import threading
-import subprocess
+import requests
+import logging as lg
+import random as rd
+
 import os
 import shutil
-import logging as lg
-
 import clipboard
-import requests
-import random as rd
 import psutil
+import threading
+import subprocess
+
 import webbrowser
 from tkinter import filedialog as fd
 from tkinter import messagebox as mb
@@ -63,12 +64,15 @@ def config(variables, mode):
 
     if mode == 0:  # Load
         for var in cfg:
-            if isinstance(cfg[var], dict):
-                for y in cfg[var]:
-                    variables[var][y].set(cfg[var][y])
+            try:
+                if isinstance(cfg[var], dict):
+                    for y in cfg[var]:
+                        variables[var][y].set(cfg[var][y])
 
-            else:
-                variables[var].set(cfg[var])
+                else:
+                    variables[var].set(cfg[var])
+            except KeyError:
+                pass
     else:  # Save
         with open('config.json', 'w') as cfgfile:
             json.dump(cfg, cfgfile, indent=4)

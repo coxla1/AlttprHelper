@@ -421,7 +421,7 @@ m += 1
 variables['autostart']['keydrop'] = tk.IntVar()
 inputs['autostart']['keydrop'] = tk.Checkbutton(
     frames['autostart'],
-    text='SNI / QUSB2SNES',
+    text='Keydrop key count',
     variable=variables['autostart']['keydrop'],
     onvalue=1,
     offvalue=0
