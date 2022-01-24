@@ -298,34 +298,6 @@ buttons['timer'].grid(row=m, column=2)
 
 m += 1
 
-# - Tracker
-labels['tracker'] = tk.Label(
-    frames['misc'],
-    text='Tracker',
-    width=LBL_WIDTH,
-    anchor=tk.W
-)
-labels['tracker'].grid(row=m, column=0)
-
-variables['tracker'] = tk.StringVar()
-defaults['tracker'] = 'Optional. Will use Dunka\'s if empty and tracker autostart is checked'
-inputs['tracker'] = tk.Entry(
-    frames['misc'],
-    width=ENTRY_WIDTH,
-    exportselection=False,
-    textvariable=variables['tracker']
-)
-inputs['tracker'].grid(row=m, column=1)
-
-buttons['tracker'] = tk.Button(
-    frames['misc'],
-    text='...',
-    width=BTN_WIDTH
-)
-buttons['tracker'].grid(row=m, column=2)
-
-m += 1
-
 # - SNI / QUSB2SNES
 labels['usb-interface'] = tk.Label(
     frames['misc'],
@@ -351,6 +323,90 @@ buttons['usb-interface'] = tk.Button(
     width=BTN_WIDTH,
 )
 buttons['usb-interface'].grid(row=m, column=2)
+
+m += 1
+
+# - Tracker
+labels['tracker'] = tk.Label(
+    frames['misc'],
+    text='Tracker',
+    width=LBL_WIDTH,
+    anchor=tk.W
+)
+labels['tracker'].grid(row=m, column=0)
+
+variables['tracker'] = tk.StringVar()
+defaults['tracker'] = 'Optional. Supports URL'
+inputs['tracker'] = tk.Entry(
+    frames['misc'],
+    width=ENTRY_WIDTH,
+    exportselection=False,
+    textvariable=variables['tracker']
+)
+inputs['tracker'].grid(row=m, column=1)
+
+buttons['tracker'] = tk.Button(
+    frames['misc'],
+    text='...',
+    width=BTN_WIDTH
+)
+buttons['tracker'].grid(row=m, column=2)
+
+m += 1
+
+# - Entrance tracker
+labels['entrance-tracker'] = tk.Label(
+    frames['misc'],
+    text='Entrance tracker',
+    width=LBL_WIDTH,
+    anchor=tk.W
+)
+labels['entrance-tracker'].grid(row=m, column=0)
+
+variables['entrance-tracker'] = tk.StringVar()
+defaults['entrance-tracker'] = 'Optional. Supports URL'
+inputs['entrance-tracker'] = tk.Entry(
+    frames['misc'],
+    width=ENTRY_WIDTH,
+    exportselection=False,
+    textvariable=variables['entrance-tracker']
+)
+inputs['entrance-tracker'].grid(row=m, column=1)
+
+buttons['entrance-tracker'] = tk.Button(
+    frames['misc'],
+    text='...',
+    width=BTN_WIDTH
+)
+buttons['entrance-tracker'].grid(row=m, column=2)
+
+m += 1
+
+# - Door tracker
+labels['door-tracker'] = tk.Label(
+    frames['misc'],
+    text='Door tracker',
+    width=LBL_WIDTH,
+    anchor=tk.W
+)
+labels['door-tracker'].grid(row=m, column=0)
+
+variables['door-tracker'] = tk.StringVar()
+defaults['door-tracker'] = 'Optional. Supports URL'
+inputs['door-tracker'] = tk.Entry(
+    frames['misc'],
+    width=ENTRY_WIDTH,
+    exportselection=False,
+    textvariable=variables['door-tracker']
+)
+inputs['door-tracker'].grid(row=m, column=1)
+
+buttons['door-tracker'] = tk.Button(
+    frames['misc'],
+    text='...',
+    width=BTN_WIDTH
+)
+buttons['door-tracker'].grid(row=m, column=2)
 
 m, n = 0, n + 1
 
@@ -391,19 +447,6 @@ inputs['autostart']['timer'].grid(row=0, column=m)
 
 m += 1
 
-# - Tracker
-variables['autostart']['tracker'] = tk.IntVar()
-inputs['autostart']['tracker'] = tk.Checkbutton(
-    frames['autostart'],
-    text='Tracker',
-    variable=variables['autostart']['tracker'],
-    onvalue=1,
-    offvalue=0
-)
-inputs['autostart']['tracker'].grid(row=0, column=m)
-
-m += 1
-
 # - USB Interface
 variables['autostart']['usb-interface'] = tk.IntVar()
 inputs['autostart']['usb-interface'] = tk.Checkbutton(
@@ -415,18 +458,57 @@ inputs['autostart']['usb-interface'] = tk.Checkbutton(
 )
 inputs['autostart']['usb-interface'].grid(row=0, column=m)
 
+m = 0
+
+# - Tracker
+variables['autostart']['tracker'] = tk.IntVar()
+inputs['autostart']['tracker'] = tk.Checkbutton(
+    frames['autostart'],
+    text='Tracker',
+    variable=variables['autostart']['tracker'],
+    onvalue=1,
+    offvalue=0
+)
+inputs['autostart']['tracker'].grid(row=1, column=m)
+
+m += 1
+
+# - Entrance tracker
+variables['autostart']['entrance-tracker'] = tk.IntVar()
+inputs['autostart']['entrance-tracker'] = tk.Checkbutton(
+    frames['autostart'],
+    text='Entrance tracker',
+    variable=variables['autostart']['entrance-tracker'],
+    onvalue=1,
+    offvalue=0
+)
+inputs['autostart']['entrance-tracker'].grid(row=1, column=m)
+
+m += 1
+
+# - Door tracker
+variables['autostart']['door-tracker'] = tk.IntVar()
+inputs['autostart']['door-tracker'] = tk.Checkbutton(
+    frames['autostart'],
+    text='Door tracker',
+    variable=variables['autostart']['door-tracker'],
+    onvalue=1,
+    offvalue=0
+)
+inputs['autostart']['door-tracker'].grid(row=1, column=m)
+
 m += 1
 
 # - Keydrop key count
 variables['autostart']['keydrop'] = tk.IntVar()
 inputs['autostart']['keydrop'] = tk.Checkbutton(
     frames['autostart'],
-    text='Keydrop key count',
+    text='Keydrop key count info',
     variable=variables['autostart']['keydrop'],
     onvalue=1,
     offvalue=0
 )
-inputs['autostart']['keydrop'].grid(row=0, column=m)
+inputs['autostart']['keydrop'].grid(row=1, column=m)
 
 m, n = 0, n + 1
 

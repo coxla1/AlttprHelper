@@ -356,18 +356,37 @@ def run(variables, defaults, log):
         t_usbinterface.start()
 
     # Autostart tracker
-    if variables['autostart']['tracker'].get():
-        if not check_default_text(variables['tracker'].get(), defaults['tracker']):
-            if not check_process(variables['tracker'].get()):
-                t_tracker = Thread(variables['tracker'].get())
-                t_tracker.start()
+    if (variables['autostart']['tracker'].get()
+            and not check_default_text(variables['tracker'].get(), defaults['tracker'])):
+        if '://' in variables['tracker'].get():
+            webbrowser.open(variables['tracker'].get())
         else:
-            webbrowser.open('https://alttprtracker.dunka.net/')
-            if h:
-                clipboard.copy(h)
-                log.config(text='Seed hash copied to clipboard')
-            else:
-                log.config(text=f'No hash found (likely if the game was not generated on alttpr.com)')
+            t_tracker = Thread(variables['tracker'].get())
+            t_tracker.start()
+
+    # Autostart entrance tracker
+    if (variables['autostart']['entrance-tracker'].get()
+            and not check_default_text(variables['entrance-tracker'].get(), defaults['entrance-tracker'])):
+        if '://' in variables['entrance-tracker'].get():
+            webbrowser.open(variables['entrance-tracker'].get())
+        else:
+            t_entrancetracker = Thread(variables['entrance-tracker'].get())
+            t_entrancetracker.start()
+
+    # Autostart door tracker
+    if (variables['autostart']['door-tracker'].get()
+            and not check_default_text(variables['door-tracker'].get(), defaults['door-tracker'])):
+        if '://' in variables['door-tracker'].get():
+            webbrowser.open(variables['door-tracker'].get())
+        else:
+            t_doortracker = Thread(variables['door-tracker'].get())
+            t_doortracker.start()
+
+    if h:
+        clipboard.copy(h)
+        log.config(text='Seed hash copied to clipboard')
+    else:
+        log.config(text=f'No hash found (likely if the game was not generated on alttpr.com)')
 
     # Keydrop information
     if variables['autostart']['keydrop'].get():
