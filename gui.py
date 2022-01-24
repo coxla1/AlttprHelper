@@ -251,7 +251,7 @@ labels['retroarch-core'] = tk.Label(
 labels['retroarch-core'].grid(row=m, column=0)
 
 variables['retroarch-core'] = tk.StringVar()
-defaults['retroarch-core'] = 'Optional if not using RetroArch'
+defaults['retroarch-core'] = 'Required if using RetroArch, bsnes-mercury compatible with autotracking and MSUs'
 inputs['retroarch-core'] = tk.Entry(
     frames['copy'],
     width=ENTRY_WIDTH,
@@ -421,164 +421,6 @@ inputs['autostart']['usb-interface'] = tk.Checkbutton(
     offvalue=0
 )
 inputs['autostart']['usb-interface'].grid(row=0, column=m)
-
-m, n = 0, n + 1
-
-# Dunka's tracker frame
-frames['dunka-tracker'] = tk.LabelFrame(
-    window,
-    text='Dunka\'s tracker display options',
-    bd=2
-)
-frames['dunka-tracker'].grid(row=n, sticky=tk.W + tk.E)
-
-labels['dunka-tracker'] = {}
-inputs['dunka-tracker'] = {}
-variables['dunka-tracker'] = {}
-
-# - Dunka row 1
-frames['dunka-1'] = tk.Frame(
-    frames['dunka-tracker'],
-    bd=2
-)
-frames['dunka-1'].grid(row=0, sticky=tk.W + tk.E)
-
-# - Door tracker
-labels['dunka-tracker']['door'] = tk.Label(
-    frames['dunka-1'],
-    text='Door Rando',
-    width=LBL_WIDTH
-)
-labels['dunka-tracker']['door'].grid(row=0, column=m)
-
-m += 1
-
-variables['dunka-tracker']['door'] = tk.StringVar()
-variables['dunka-tracker']['door'].set('None')
-inputs['dunka-tracker']['door'] = tk.OptionMenu(
-    frames['dunka-1'],
-    variables['dunka-tracker']['door'],
-    *['None', 'Basic', 'Crossed/Keydrop']
-)
-inputs['dunka-tracker']['door'].config(width=BTN_WIDTH + 4)
-inputs['dunka-tracker']['door'].grid(row=0, column=m)
-
-m += 1
-
-# - Overworld tracker
-labels['dunka-tracker']['overworld'] = tk.Label(
-    frames['dunka-1'],
-    text='Overworld Rando',
-    width=LBL_WIDTH
-)
-labels['dunka-tracker']['overworld'].grid(row=0, column=m)
-
-m += 1
-
-variables['dunka-tracker']['overworld'] = tk.StringVar()
-variables['dunka-tracker']['overworld'].set('None')
-inputs['dunka-tracker']['overworld'] = tk.OptionMenu(
-    frames['dunka-1'],
-    variables['dunka-tracker']['overworld'],
-    *['None', 'Mixed/Crossed/Misc', 'Parallel', 'Full']
-)
-inputs['dunka-tracker']['overworld'].config(width=BTN_WIDTH + 4)
-inputs['dunka-tracker']['overworld'].grid(row=0, column=m)
-
-# - Dunka row 2
-m = 0
-frames['dunka-2'] = tk.Frame(
-    frames['dunka-tracker'],
-    bd=2
-)
-frames['dunka-2'].grid(row=1, sticky=tk.W)
-
-# - Map display
-labels['dunka-tracker']['map-display'] = tk.Label(
-    frames['dunka-2'],
-    text='Map display',
-    width=LBL_WIDTH
-)
-labels['dunka-tracker']['map-display'].grid(row=0, column=m)
-
-m += 1
-
-variables['dunka-tracker']['map-display'] = tk.StringVar()
-variables['dunka-tracker']['map-display'].set('None')
-inputs['dunka-tracker']['map-display'] = tk.OptionMenu(
-    frames['dunka-2'],
-    variables['dunka-tracker']['map-display'],
-    *['None', 'Normal', 'Compact']
-)
-inputs['dunka-tracker']['map-display'].config(width=BTN_WIDTH + 4)
-inputs['dunka-tracker']['map-display'].grid(row=0, column=m)
-
-m += 1
-
-# - Map logic
-labels['dunka-tracker']['map-logic'] = tk.Label(
-    frames['dunka-2'],
-    text='Map logic',
-    width=LBL_WIDTH
-)
-labels['dunka-tracker']['map-logic'].grid(row=0, column=m)
-
-m += 1
-
-variables['dunka-tracker']['map-logic'] = tk.StringVar()
-variables['dunka-tracker']['map-logic'].set('No Glitches')
-inputs['dunka-tracker']['map-logic'] = tk.OptionMenu(
-    frames['dunka-2'],
-    variables['dunka-tracker']['map-logic'],
-    *['No Glitches', 'OWG', 'MG/No Logic']
-)
-inputs['dunka-tracker']['map-logic'].config(width=BTN_WIDTH + 4)
-inputs['dunka-tracker']['map-logic'].grid(row=0, column=m)
-
-# - Dunka row 3
-m = 0
-frames['dunka-3'] = tk.Frame(
-    frames['dunka-tracker'],
-    bd=2
-)
-frames['dunka-3'].grid(row=2, sticky=tk.W)
-
-# - Autotracker
-variables['dunka-tracker']['autotracker'] = tk.IntVar()
-inputs['dunka-tracker']['autotracker'] = tk.Checkbutton(
-    frames['dunka-3'],
-    text='Autotracker',
-    variable=variables['dunka-tracker']['autotracker'],
-    onvalue=1,
-    offvalue=0
-)
-inputs['dunka-tracker']['autotracker'].grid(row=0, column=m)
-
-m += 1
-
-# - Sphere tracker
-variables['dunka-tracker']['sphere'] = tk.IntVar()
-inputs['dunka-tracker']['sphere'] = tk.Checkbutton(
-    frames['dunka-3'],
-    text='Sphere',
-    variable=variables['dunka-tracker']['sphere'],
-    onvalue=1,
-    offvalue=0
-)
-inputs['dunka-tracker']['sphere'].grid(row=0, column=m)
-
-m += 1
-
-# - Shopsanity
-variables['dunka-tracker']['shopsanity'] = tk.IntVar()
-inputs['dunka-tracker']['shopsanity'] = tk.Checkbutton(
-    frames['dunka-3'],
-    text='Shopsanity',
-    variable=variables['dunka-tracker']['shopsanity'],
-    onvalue=1,
-    offvalue=0
-)
-inputs['dunka-tracker']['shopsanity'].grid(row=0, column=m)
 
 m, n = 0, n + 1
 
@@ -818,67 +660,56 @@ for child in frames['gameoptions'].winfo_children():
 for child in frames['sprites'].winfo_children():
     child.configure(state='disabled')
 
-# buttons['run'].config(command=lambda: utils.run(variables, inputs['fxpak-path'], defaults, labels['log']))
-
 # Set commands
 buttons['seed'].configure(command=lambda: utils.set_path(
     variables['seed'],
     inputs['seed'],
-    0
-))
+    0))
 buttons['rom'].configure(command=lambda: utils.set_path(
     variables['rom'],
     inputs['rom'],
-    0
-))
+    0))
 buttons['emulator'].configure(command=lambda: utils.set_path(
     variables['emulator'],
     inputs['emulator'],
-    0
-))
+    0))
 buttons['folder-path'].configure(command=lambda: utils.set_path(
     variables['folder-path'],
     inputs['folder-path'],
-    1
-))
+    1))
 buttons['retroarch-core'].configure(command=lambda: utils.set_path(
     variables['retroarch-core'],
     inputs['retroarch-core'],
-    0
-))
+    0))
 buttons['timer'].configure(command=lambda: utils.set_path(
     variables['timer'],
     inputs['timer'],
-    0
-))
+    0))
 buttons['tracker'].configure(command=lambda: utils.set_path(
     variables['tracker'],
     inputs['tracker'],
-    0
-))
+    0))
 buttons['usb-interface'].configure(command=lambda: utils.set_path(
     variables['usb-interface'],
     inputs['usb-interface'],
-    0
-))
+    0))
 inputs['mode'][0].configure(command=lambda: utils.switch_frame(
     frames['transfer'].winfo_children(),
-    frames['copy'].winfo_children()
-))
+    frames['copy'].winfo_children()))
 inputs['mode'][1].configure(command=lambda: utils.switch_frame(
     frames['copy'].winfo_children(),
-    frames['transfer'].winfo_children()
-))
+    frames['transfer'].winfo_children()))
 buttons['detect'].config(command=lambda: fxpak.detect(
     variables,
-    labels['log']
-))
+    labels['log']))
 buttons['msu'].config(command=lambda: utils.refresh(
     variables,
     inputs['msu'],
-    labels['log']
-))
-
+    labels['log']))
+buttons['run'].config(command=lambda: utils.run(
+    variables,
+    defaults,
+    labels['log']))
 
 # sprites.build_dict()
 # sprites.load_sprites()

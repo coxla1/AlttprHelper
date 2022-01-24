@@ -4,10 +4,14 @@ import subprocess
 import os
 import shutil
 import logging as lg
+
+import clipboard
 import requests
 import random as rd
-import urllib.request
+import psutil
+import webbrowser
 from tkinter import filedialog as fd
+from tkinter import messagebox as mb
 
 import fxpak
 
@@ -118,7 +122,7 @@ def refresh(variables, msu_list, log):
         try:
             msupacks = fxpak.dir_content(variables['uri'].get(), variables['fxpak-path'].get(), 0)
         except Exception as e:
-            lg.error(f'Could not find the MSU directory : {e}')
+            lg.error(f'Could not find the MSU directory: {e}')
             log.config(text='Could not find the MSU directory')
             return -1
 
@@ -127,7 +131,7 @@ def refresh(variables, msu_list, log):
             path = variables['folder-path'].get()
             msupacks = [msu for msu in os.listdir(path) if os.path.isdir(os.path.join(path, msu))]
         except FileNotFoundError as e:
-            lg.error(f'Could not find the MSU directory : {e}')
+            lg.error(f'Could not find the MSU directory: {e}')
             log.config(text='Could not find the MSU directory')
             return -1
 
@@ -146,124 +150,6 @@ def refresh(variables, msu_list, log):
     msupacks.append('Default')
 
 
-# TODO : rewrite
-def dunka_url(vars, log, settings={'spoilers': 'mystery'}):
-    # Determine URL format
-    with urllib.request.urlopen('https://raw.githubusercontent.com/bigdunka/alttptracker/master/js/index.js') as u:
-        trackerjs = u.read().decode('utf-8')
-
-    i = len('trackerWindow = window.open(')
-    j = trackerjs.index('trackerWindow')
-    k = trackerjs[j:].index('\n')
-    urlformat = 'f' + trackerjs[j + i:j + k]
-
-    # Define variables
-    if settings['spoilers'] == 'mystery':
-        tracker = 'tracker'
-        type = 'O'
-        entrance = 'N'
-        boss = 'S'
-        enemy = 'S'
-        glitches = {'No Glitches': 'N', 'OWG': 'O', 'MG/No Logic': 'M'}[vars['dunkatracker']['maplogic'].get()]
-        item = 'A'
-        goal = 'G'
-        tower = 'R'
-        towercrystals = '7'
-        ganon = 'R'
-        ganoncrystals = '7'
-        swords = 'R'
-        map = {'None': 'N', 'Normal': 'M', 'Compact': 'C'}[vars['dunkatracker']['mapdisplay'].get()]
-        spoiler = 'N'
-        sphere = {0: 'N', 1: 'Y'}[vars['dunkatracker']['sphere'].get()]
-        mystery = 'S'
-        door = {'None': 'N', 'Basic': 'B', 'Crossed/Keydrop': 'C'}[vars['dunkatracker']['door'].get()]
-        shuffledmaps = '1'
-        shuffledcompasses = '1'
-        shuffledsmallkeys = '1'
-        shuffledbigkeys = '1'
-        shopsanity = 'N'
-        ambrosia = 'N'
-        overworld = {'None': 'N', 'Mixed/Crossed/Misc': 'O', 'Parallel': 'P', 'Full': 'F'}[
-            vars['dunkatracker']['overworld'].get()]
-        autotracking = {0: 'N', 1: 'Y'}[vars['dunkatracker']['autotracker'].get()]
-        trackingport = '8080'
-        sprite = 'Link'
-        compact = '&map=C' if map == 'C' else ''
-        startingboots = 'N'
-        startingflute = 'N'
-        startinghookshot = 'N'
-        startingicerod = 'N'
-
-    else:
-        tracker = 'entrancetracker' if 'shuffle' in settings else 'tracker'
-        type = {'open': 'O', 'standard': 'S', 'inverted': 'I', 'retro': 'R'}[settings['mode']]
-        entrance = 'S' if 'shuffle' in settings else 'N'
-        boss = 'N' if settings['enemizer.boss_shuffle'] == 'none' else 'S'
-        enemy = 'N' if settings['enemizer.enemy_shuffle'] == 'none' else 'S'
-        glitches = {'No Glitches': 'N', 'OWG': 'O', 'MG/No Logic': 'M'}[vars['dunkatracker']['maplogic'].get()]
-        item = 'A'
-        goal = {'ganon': 'G', 'fast_ganon': 'F', 'pedestal': 'P', 'dungeons': 'A', 'triforce-hunt': 'O'}[
-            settings['goal']]
-        tower = 'R' if settings['entry_crystals_tower'] == 'random' else 'C'
-        towercrystals = '7' if settings['entry_crystals_tower'] == 'random' else settings['entry_crystals_tower']
-        ganon = 'R' if settings['entry_crystals_ganon'] == 'random' else 'C'
-        ganoncrystals = '7' if settings['entry_crystals_tower'] == 'random' else settings['entry_crystals_ganon']
-        swords = {'randomized': 'R', 'assured': 'A', 'vanilla': 'V', 'swordless': 'S'}[settings['weapons']]
-        map = {'None': 'N', 'Normal': 'M', 'Compact': 'C'}[vars['dunkatracker']['mapdisplay'].get()]
-        spoiler = 'N'
-        sphere = {0: 'N', 1: 'Y'}[vars['dunkatracker']['sphere'].get()]
-        mystery = 'S'
-        door = {'None': 'N', 'Basic': 'B', 'Crossed/Keydrop': 'C'}[vars['dunkatracker']['door'].get()]
-
-        shuffledmaps, shuffledcompasses, shuffledsmallkeys, shuffledbigkeys = \
-        {'standard': ('0', '0', '0', '0'), 'mc': ('1', '1', '0', '0'), 'mcs': ('1', '1', '1', '0'),
-         'full': ('1', '1', '1', '1')}[settings['dungeon_items']]
-        shopsanity = {0: 'N', 1: 'Y'}[vars['dunkatracker']['shopsanity'].get()]
-
-        if 'name' in settings:
-            if 'Potpourri' in settings['name']:
-                shuffledmaps, shuffledcompasses, shuffledsmallkeys, shuffledbigkeys = '0', '0', '1', '1'
-            log.config(text='You may have to adjust settings using the flag icon in the top-left corner')
-
-        if settings['logic'] == 'NoLogic':
-            shuffledmaps, shuffledcompasses, shuffledsmallkeys, shuffledbigkeys = '1', '1', '1', '1'
-
-        ambrosia = 'N'
-        overworld = {'None': 'N', 'Mixed/Crossed/Misc': 'O', 'Parallel': 'P', 'Full': 'F'}[
-            vars['dunkatracker']['overworld'].get()]
-        autotracking = {0: 'N', 1: 'Y'}[vars['dunkatracker']['autotracker'].get()]
-        trackingport = '8080'
-        sprite = 'Link'
-        compact = '&map=C' if map == 'C' else ''
-        startingboots = 'N'
-        startingflute = 'N'
-        startinghookshot = 'N'
-        startingicerod = 'N'
-
-    # This should work if Dunka adds a new variable
-    flag = True
-    newvar = []
-    while flag:
-        try:
-            url = 'https://alttprtracker.dunka.net/{:}'.format(eval(urlformat))
-            flag = False
-        except NameError as e:
-            varname = str(e)[6:]
-            i = varname.index('\'')
-            newvar.append(varname[:i])
-            exec('{:} = \'N\''.format(varname[:i]))
-
-    for x in newvar:
-        print(f'Dunka\'s tracker new variable: {x}')
-    if newvar:
-        log.config(text='New variable found for Dunka\'s tracker! Please advise Coxla#2119 on Discord')
-
-    width = 1340 if map == 'M' else 448
-    height = (988 if map == 'C' else 744) if sphere == 'Y' else (692 if map == 'C' else 448)
-
-    return url, width + 15, height + 15 + 20
-
-
 # Main function
 def run(variables, defaults, log):
     global msupacks
@@ -274,10 +160,9 @@ def run(variables, defaults, log):
     def check_default_text(text, default_text):
         return text == default_text
 
-    # TODO : could be better, some edge cases may break it (e.g. kara fork)
     # Returns the hash of a seed file or URL
     def seed_hash(seed):
-        if '.sfc' in seed:  # Input : file
+        if '.sfc' in seed:  # Input: file
             with open(seed, 'rb') as f:
                 f.read(32704)
                 h = bytearray.fromhex(f.read(13).hex()).decode()
@@ -288,26 +173,21 @@ def run(variables, defaults, log):
                 h = seed[:seed.find('/')][::-1]
             else:
                 h = seed
-        return h
 
-    # Return the settings of a seed with hash h
-    def seed_settings(h):
         if h:
             url = f'https://alttpr-patch-data.s3.us-east-2.amazonaws.com/{h}.json'
             with requests.get(url) as r:
-                settings = r.json()['spoiler']
-            if settings['meta']['build'][:4] < '2021':
-                settings = None
-        else:
-            settings = None
-        return settings
+                build = r.json()['spoiler']['meta']['build']
+            h = None if build[:4] < '2021' else h
+
+        return h
 
     # Return the filename format of an MSU, without extension
     def get_filename(path, mode, uri):
         if mode == 0:  # USB transfer
             content = fxpak.dir_content(uri, path, 1)
         else:  # Copy file
-            content = [x for x in os.listdir(x) if os.path.isfile(os.path.join(path, x))]
+            content = [x for x in os.listdir(path) if os.path.isfile(os.path.join(path, x))]
 
         flag, i = False, 0
         while not flag and i < len(content):
@@ -360,24 +240,24 @@ def run(variables, defaults, log):
 
         f.close()
 
+    # Check if an executable is already running
+    def check_process(path):
+        name = path[::-1]
+        try:
+            i = name.index('/')
+            name = name[:i][::-1]
+        except Exception as e:
+            name = ''
+            lg.warning(f'No process found: {e}')
+
+        return name in [x.name() for x in psutil.process_iter()]
+
     log.config(text='')
 
     if variables['seed'].get():
         # Hash
         h = seed_hash(variables['seed'].get())
-        lg.info(f'Seed hash : {h}')
-
-        # Settings
-        try:
-            settings = seed_settings(h)
-        except Exception:
-            settings = None
-            lg.warning('Could not find settings for this seed')
-
-        if settings:
-            lg.info('Found settings')
-            for x in settings['meta']:
-                lg.info(f'{x} : {settings["meta"][x]}')
+        lg.info(f'Seed hash: {h}')
 
         # MSU Pack
         msu = variables['msu'].get()
@@ -411,10 +291,10 @@ def run(variables, defaults, log):
         else:
             filename = 'seed'
 
-        lg.info(f'MSU : {msu}')
-        lg.info('Transfer type : {:}'.format('Copy' if vars['mode'].get() else 'USB'))
-        lg.info(f'Destination folder : {destination_folder}')
-        lg.info(f'Filename : {filename}')
+        lg.info(f'MSU: {msu}')
+        lg.info('Transfer type: {:}'.format('Copy' if variables['mode'].get() else 'USB'))
+        lg.info(f'Destination folder: {destination_folder}')
+        lg.info(f'Filename: {filename}')
 
         if variables['mode'].get() == 0:  # USB transfer
             try:
@@ -423,10 +303,83 @@ def run(variables, defaults, log):
                                 open(variables['seed'].get(), 'rb').read()
                                 )
             except Exception as e:
-                lg.error(f'Oops upload to FXPak did not went really well : {e}')
+                lg.error(f'Oops upload to FXPak did not went really well: {e}')
                 log.config(text='Could not send the seed to FXPak')
         else:  # Copy file
             shutil.copy(variables['seed'].get(),
                         f'{destination_folder}/{filename}.sfc'
                         )
-    # Autostart
+
+        # Boot ROM
+        if variables['autostart']['boot'].get():
+            if variables['mode'].get() == 0:  # USB transfer
+                fxpak.boot_rom(variables['uri'].get(), f'{destination_folder}/{filename}.sfc')
+
+            elif (variables['mode'].get() == 1
+                  and not check_default_text(variables['emulator'].get(), defaults['emulator'])):  # Copy file
+                if ('retroarch' in variables['emulator'].get().lower()  # RetroArch with a core
+                        and not check_default_text(variables['retroarch-core'].get(), defaults['retroarch-core'])):
+                    if msu == 'Default':
+                        t_emulator = Thread(
+                            '"{:}" -L "{:}" "{:}"'.format(
+                                variables['emulator'].get(),
+                                variables['retroarch-core'].get(),
+                                f'{destination_folder}/{filename}.sfc'))
+                    else:
+                        t_emulator = Thread(
+                            '"{:}" -L "{:}" "{:}"'.format(
+                                variables['emulator'].get(),
+                                variables['retroarch-core'].get(),
+                                f'{destination_folder}/manifest.bml'))
+
+                else:  # Not RetroArch or RetroArch without a core specified
+                    t_emulator = Thread(f'"{variables["emulator"].get()}"')
+
+                t_emulator.start()
+
+    # Autostart timer
+    if (variables['autostart']['timer'].get()
+            and not check_default_text(variables['timer'].get(), defaults['timer'])
+            and not check_process(variables['timer'].get())):
+        t_timer = Thread(variables['timer'].get())
+        t_timer.start()
+
+    # Autostart USB interface
+    if (variables['autostart']['usb-interface'].get()
+            and not check_default_text(variables['usb-interface'].get(), defaults['usb-interface'])
+            and not check_process(variables['usb-interface'].get())):
+        t_usbinterface = Thread(variables['usb-interface'].get())
+        t_usbinterface.start()
+
+    # Autostart tracker
+    if variables['autostart']['tracker'].get():
+        if not check_default_text(variables['tracker'].get(), defaults['tracker']):
+            if not check_process(variables['tracker'].get()):
+                t_tracker = Thread(variables['tracker'].get())
+                t_tracker.start()
+        else:
+            webbrowser.open('https://alttprtracker.dunka.net/')
+            if h:
+                clipboard.copy(h)
+                log.config(text='Seed hash copied to clipboard')
+            else:
+                log.config(text=f'No hash found (likely if the game was not generated on alttpr.com)')
+
+    # Keydrop information
+    if variables['dunka-tracker']['door'].get() == 'Crossed/Keydrop':
+        keycount = 'Number of SK in each dungeon\n'
+        keycount += '(Does not apply if crossed door turned on)\n'
+        keycount += 'Hyrule Castle: 4\n'
+        keycount += 'Eastern Palace: 2\n'
+        keycount += 'Desert Palace: 4\n'
+        keycount += 'Tower of Hera: 1\n'
+        keycount += 'Castle Tower: 4 (no BK)\n'
+        keycount += 'Palace of Darkness: 6\n'
+        keycount += 'Swamp Palace: 6\n'
+        keycount += 'Skull Woods: 5\n'
+        keycount += 'Thieves\' Town: 3\n'
+        keycount += 'Ice Palace: 5\n'
+        keycount += 'Misery Mire: 6\n'
+        keycount += 'Turtle Rock: 6\n'
+        keycount += 'Ganon\'s Tower: 8\n'
+        mb.showinfo('Keydrop keys count', keycount)
