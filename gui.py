@@ -7,7 +7,6 @@ import fxpak
 # TODO : debug print picked options when this will be back
 # TODO : sprites
 # TODO : window too big now, use tabs
-# TODO : add options for entrance tracker, door tracker...
 
 m, n = 0, 0
 
