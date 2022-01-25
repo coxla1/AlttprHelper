@@ -777,6 +777,14 @@ buttons['tracker'].configure(command=lambda: utils.set_path(
     variables['tracker'],
     inputs['tracker'],
     0))
+buttons['entrance-tracker'].configure(command=lambda: utils.set_path(
+    variables['entrance-tracker'],
+    inputs['entrance-tracker'],
+    0))
+buttons['door-tracker'].configure(command=lambda: utils.set_path(
+    variables['door-tracker'],
+    inputs['door-tracker'],
+    0))
 buttons['usb-interface'].configure(command=lambda: utils.set_path(
     variables['usb-interface'],
     inputs['usb-interface'],

@@ -257,6 +257,7 @@ def run(variables, defaults, log):
         return name in [x.name() for x in psutil.process_iter()]
 
     log.config(text='')
+    h = None
 
     if variables['seed'].get():
         # Hash
@@ -367,8 +368,9 @@ def run(variables, defaults, log):
     # Autostart entrance tracker
     if (variables['autostart']['entrance-tracker'].get()
             and not check_default_text(variables['entrance-tracker'].get(), defaults['entrance-tracker'])):
-        if '://' in variables['entrance-tracker'].get():
-            webbrowser.open(variables['entrance-tracker'].get())
+        if '.htm' or '://' in variables['entrance-tracker'].get():
+            prefix = 'file:///' if '.htm' in variables['entrance-tracker'].get() else ''
+            webbrowser.open(f'{prefix}{variables["entrance-tracker"].get()}')
         else:
             t_entrancetracker = Thread(variables['entrance-tracker'].get())
             t_entrancetracker.start()
@@ -376,8 +378,9 @@ def run(variables, defaults, log):
     # Autostart door tracker
     if (variables['autostart']['door-tracker'].get()
             and not check_default_text(variables['door-tracker'].get(), defaults['door-tracker'])):
-        if '://' in variables['door-tracker'].get():
-            webbrowser.open(variables['door-tracker'].get())
+        if '.htm' or '://' in variables['door-tracker'].get():
+            prefix = 'file:///' if '.htm' in variables['door-tracker'].get() else ''
+            webbrowser.open(f'{prefix}{variables["door-tracker"].get()}')
         else:
             t_doortracker = Thread(variables['door-tracker'].get())
             t_doortracker.start()
