@@ -7,7 +7,6 @@ import resources.sni_pb2 as sni
 import resources.sni_pb2_grpc as sni_grpc
 
 
-# TODO : check that this still works
 # Detect FXPak function
 def detect(variables, log):
     # Start SNI and wait for it
@@ -16,13 +15,6 @@ def detect(variables, log):
     if flag:
         t_sni = utils.Thread(variables['usb-interface'].get())
         t_sni.start()
-
-        try:
-            t_sni.join()
-        except Exception as e:
-            lg.error(f'SNI not found : {e}')
-            log.config(text='Could not find SNI, check your path')
-            return -1
 
     cnt = 0
     max_cnt = 3
@@ -34,7 +26,7 @@ def detect(variables, log):
 
     if cnt > max_cnt:
         lg.error('Could not reach port 8191')
-        log.config(text='Could not reach port 8191, make sure SNI and QUSB2SNES are not running at the same time')
+        log.config(text='Could not reach port 8191, make sure SNI is running and QUSB2SNES is not')
         return -1
 
     # Look for FXPak

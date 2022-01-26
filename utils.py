@@ -28,16 +28,7 @@ class Thread(threading.Thread):
         self.exc = None
 
     def run(self):
-        try:
-            subprocess.call(self.cmd)
-        except Exception as e:
-            self.exc = e
-
-    def join(self, **kwargs):
-        threading.Thread.join(self)
-        if self.exc:
-            raise self.exc
-        return -1
+        subprocess.call(self.cmd)
 
 
 # Config file load and save function
