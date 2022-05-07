@@ -13,8 +13,10 @@ import subprocess
 import webbrowser
 from tkinter import filedialog as fd
 from tkinter import messagebox as mb
+from grpc._channel import _InactiveRpcError
 
 import fxpak
+
 
 msupacks = ['Default']
 
@@ -116,9 +118,9 @@ def refresh(variables, msu_list, log):
     if variables['mode'].get() == 0:  # USB transfer
         try:
             msupacks = fxpak.dir_content(variables['uri'].get(), variables['fxpak-path'].get(), 0)
-        except Exception as e:
+        except _InactiveRpcError as e:
             lg.error(f'Could not find the MSU directory: {e}')
-            log.config(text='Could not find the MSU directory')
+            log.config(text='Could not find the MSU directory, reboot SNES, then detect and refresh again')
             return -1
 
     else:  # Copy file
@@ -127,7 +129,7 @@ def refresh(variables, msu_list, log):
             msupacks = [msu for msu in os.listdir(path) if os.path.isdir(os.path.join(path, msu))]
         except FileNotFoundError as e:
             lg.error(f'Could not find the MSU directory: {e}')
-            log.config(text='Could not find the MSU directory')
+            log.config(text='Could not find the MSU directory, check your path')
             return -1
 
     msupacks.sort()
@@ -236,7 +238,7 @@ def run(variables, defaults, log):
         f.close()
 
     # Check if an executable is already running
-    def check_process(path):
+    def check_process(path, kill):
         name = path[::-1]
         try:
             i = name.index('/')
@@ -245,7 +247,12 @@ def run(variables, defaults, log):
             name = ''
             lg.warning(f'No process found: {e}')
 
-        return name in [x.name() for x in psutil.process_iter()]
+        for x in psutil.process_iter():
+            if name == x.name():
+                if kill:
+                    x.kill()
+                return True
+        return False
 
     log.config(text='')
     h = None
@@ -301,6 +308,7 @@ def run(variables, defaults, log):
             except Exception as e:
                 lg.error(f'Oops upload to FXPak did not went really well: {e}')
                 log.config(text='Could not send the seed to FXPak')
+
         else:  # Copy file
             shutil.copy(variables['seed'].get(),
                         f'{destination_folder}/{filename}.sfc'
@@ -329,21 +337,21 @@ def run(variables, defaults, log):
                                 f'{destination_folder}/manifest.bml'))
 
                 else:  # Not RetroArch or RetroArch without a core specified
-                    t_emulator = Thread(f'"{variables["emulator"].get()}"')
+                    t_emulator = Thread(f'"{variables["emulator"].get()}" "{destination_folder}/{filename}.sfc"')
 
                 t_emulator.start()
 
     # Autostart timer
     if (variables['autostart']['timer'].get()
             and not check_default_text(variables['timer'].get(), defaults['timer'])
-            and not check_process(variables['timer'].get())):
+            and not check_process(variables['timer'].get(), 0)):
         t_timer = Thread(variables['timer'].get())
         t_timer.start()
 
     # Autostart USB interface
     if (variables['autostart']['usb-interface'].get()
             and not check_default_text(variables['usb-interface'].get(), defaults['usb-interface'])
-            and not check_process(variables['usb-interface'].get())):
+            and not check_process(variables['usb-interface'].get(), 0)):
         t_usbinterface = Thread(variables['usb-interface'].get())
         t_usbinterface.start()
 
@@ -376,9 +384,13 @@ def run(variables, defaults, log):
             t_doortracker = Thread(variables['door-tracker'].get())
             t_doortracker.start()
 
-    if h:
+    if h and variables['seed'].get():
         clipboard.copy(h)
         log.config(text='Seed hash copied to clipboard')
+        if variables['mode'].get() == 0 and variables['autostart']['boot'].get():
+            warn = 'If your autotracker doesn\'t detect your console, disconnect your SNES from SNI dropdown menu\n'
+            warn += 'If that still not works, restart both your console and SNI and/or disable boot ROM.'
+            mb.showwarning('Boot ROM', warn)
     else:
         log.config(text=f'No hash found (likely if the game was not generated on alttpr.com)')
 

@@ -33,6 +33,7 @@ def detect(variables, log):
     with grpc.insecure_channel('localhost:8191') as channel:
         stub = sni_grpc.DevicesStub(channel)
         response = stub.ListDevices(sni.DevicesRequest())
+        channel.close()
 
     uri = None
     for x in response.devices:
@@ -60,6 +61,7 @@ def dir_content(uri, path, t):
     with grpc.insecure_channel('localhost:8191') as channel:
         stub = sni_grpc.DeviceFilesystemStub(channel)
         response = stub.ReadDirectory(sni.ReadDirectoryRequest(uri=uri, path=path))
+        channel.close()
 
     # Types : 0 = directory, 1 = files
     for x in response.entries:
@@ -74,10 +76,15 @@ def send_file(uri, path, data):
     with grpc.insecure_channel('localhost:8191') as channel:
         stub = sni_grpc.DeviceFilesystemStub(channel)
         stub.PutFile(sni.PutFileRequest(uri=uri, path=path, data=data))
-
+        channel.close()
 
 # Boot ROM function
 def boot_rom(uri, path):
     with grpc.insecure_channel('localhost:8191') as channel:
         stub = sni_grpc.DeviceFilesystemStub(channel)
-        stub.BootFile(sni.BootFileRequest(uri=uri, path=path))
+        try:
+            stub.BootFile(sni.BootFileRequest(uri=uri, path=path))
+        except grpc._channel._InactiveRpcError as e:
+            # TODO : this is where shit happens
+            lg.warning(f'SNI raises an error, but I suspect it to be good: {e}')
+        channel.close()

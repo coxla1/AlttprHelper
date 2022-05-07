@@ -7,10 +7,12 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
+
+
+
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='sni.proto',
@@ -230,6 +232,8 @@ BootFile = 16
 Directory = 0
 File = 1
 
+
+
 _DEVICESREQUEST = _descriptor.Descriptor(
   name='DevicesRequest',
   full_name='DevicesRequest',
@@ -244,7 +248,7 @@ _DEVICESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -261,6 +265,7 @@ _DEVICESREQUEST = _descriptor.Descriptor(
   serialized_end=44,
 )
 
+
 _DEVICESRESPONSE_DEVICE = _descriptor.Descriptor(
   name='Device',
   full_name='DevicesResponse.Device',
@@ -275,35 +280,35 @@ _DEVICESRESPONSE_DEVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='displayName', full_name='DevicesResponse.Device.displayName', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='kind', full_name='DevicesResponse.Device.kind', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='capabilities', full_name='DevicesResponse.Device.capabilities', index=3,
       number=4, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='defaultAddressSpace', full_name='DevicesResponse.Device.defaultAddressSpace', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -334,7 +339,7 @@ _DEVICESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -351,6 +356,7 @@ _DEVICESRESPONSE = _descriptor.Descriptor(
   serialized_end=250,
 )
 
+
 _RESETSYSTEMREQUEST = _descriptor.Descriptor(
   name='ResetSystemRequest',
   full_name='ResetSystemRequest',
@@ -365,7 +371,7 @@ _RESETSYSTEMREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -382,6 +388,7 @@ _RESETSYSTEMREQUEST = _descriptor.Descriptor(
   serialized_end=285,
 )
 
+
 _RESETSYSTEMRESPONSE = _descriptor.Descriptor(
   name='ResetSystemResponse',
   full_name='ResetSystemResponse',
@@ -396,7 +403,7 @@ _RESETSYSTEMRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -413,6 +420,7 @@ _RESETSYSTEMRESPONSE = _descriptor.Descriptor(
   serialized_end=321,
 )
 
+
 _RESETTOMENUREQUEST = _descriptor.Descriptor(
   name='ResetToMenuRequest',
   full_name='ResetToMenuRequest',
@@ -427,7 +435,7 @@ _RESETTOMENUREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -444,6 +452,7 @@ _RESETTOMENUREQUEST = _descriptor.Descriptor(
   serialized_end=356,
 )
 
+
 _RESETTOMENURESPONSE = _descriptor.Descriptor(
   name='ResetToMenuResponse',
   full_name='ResetToMenuResponse',
@@ -458,7 +467,7 @@ _RESETTOMENURESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -475,6 +484,7 @@ _RESETTOMENURESPONSE = _descriptor.Descriptor(
   serialized_end=392,
 )
 
+
 _PAUSEEMULATIONREQUEST = _descriptor.Descriptor(
   name='PauseEmulationRequest',
   full_name='PauseEmulationRequest',
@@ -489,14 +499,14 @@ _PAUSEEMULATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='paused', full_name='PauseEmulationRequest.paused', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -513,6 +523,7 @@ _PAUSEEMULATIONREQUEST = _descriptor.Descriptor(
   serialized_end=446,
 )
 
+
 _PAUSEEMULATIONRESPONSE = _descriptor.Descriptor(
   name='PauseEmulationResponse',
   full_name='PauseEmulationResponse',
@@ -527,14 +538,14 @@ _PAUSEEMULATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='paused', full_name='PauseEmulationResponse.paused', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -551,6 +562,7 @@ _PAUSEEMULATIONRESPONSE = _descriptor.Descriptor(
   serialized_end=501,
 )
 
+
 _PAUSETOGGLEEMULATIONREQUEST = _descriptor.Descriptor(
   name='PauseToggleEmulationRequest',
   full_name='PauseToggleEmulationRequest',
@@ -565,7 +577,7 @@ _PAUSETOGGLEEMULATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -582,6 +594,7 @@ _PAUSETOGGLEEMULATIONREQUEST = _descriptor.Descriptor(
   serialized_end=545,
 )
 
+
 _PAUSETOGGLEEMULATIONRESPONSE = _descriptor.Descriptor(
   name='PauseToggleEmulationResponse',
   full_name='PauseToggleEmulationResponse',
@@ -596,7 +609,7 @@ _PAUSETOGGLEEMULATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -613,6 +626,7 @@ _PAUSETOGGLEEMULATIONRESPONSE = _descriptor.Descriptor(
   serialized_end=590,
 )
 
+
 _DETECTMEMORYMAPPINGREQUEST = _descriptor.Descriptor(
   name='DetectMemoryMappingRequest',
   full_name='DetectMemoryMappingRequest',
@@ -627,21 +641,21 @@ _DETECTMEMORYMAPPINGREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='fallbackMemoryMapping', full_name='DetectMemoryMappingRequest.fallbackMemoryMapping', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='romHeader00FFB0', full_name='DetectMemoryMappingRequest.romHeader00FFB0', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -657,16 +671,17 @@ _DETECTMEMORYMAPPINGREQUEST = _descriptor.Descriptor(
       name='_fallbackMemoryMapping', full_name='DetectMemoryMappingRequest._fallbackMemoryMapping',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
-      fields=[]),
+    fields=[]),
     _descriptor.OneofDescriptor(
       name='_romHeader00FFB0', full_name='DetectMemoryMappingRequest._romHeader00FFB0',
       index=1, containing_type=None,
       create_key=_descriptor._internal_create_key,
-      fields=[]),
+    fields=[]),
   ],
   serialized_start=593,
   serialized_end=762,
 )
+
 
 _DETECTMEMORYMAPPINGRESPONSE = _descriptor.Descriptor(
   name='DetectMemoryMappingResponse',
@@ -682,28 +697,28 @@ _DETECTMEMORYMAPPINGRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='memoryMapping', full_name='DetectMemoryMappingResponse.memoryMapping', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='confidence', full_name='DetectMemoryMappingResponse.confidence', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='romHeader00FFB0', full_name='DetectMemoryMappingResponse.romHeader00FFB0', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -720,6 +735,7 @@ _DETECTMEMORYMAPPINGRESPONSE = _descriptor.Descriptor(
   serialized_end=890,
 )
 
+
 _READMEMORYREQUEST = _descriptor.Descriptor(
   name='ReadMemoryRequest',
   full_name='ReadMemoryRequest',
@@ -734,28 +750,28 @@ _READMEMORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestAddressSpace', full_name='ReadMemoryRequest.requestAddressSpace', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestMemoryMapping', full_name='ReadMemoryRequest.requestMemoryMapping', index=2,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='ReadMemoryRequest.size', index=3,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -772,6 +788,7 @@ _READMEMORYREQUEST = _descriptor.Descriptor(
   serialized_end=1040,
 )
 
+
 _READMEMORYRESPONSE = _descriptor.Descriptor(
   name='ReadMemoryResponse',
   full_name='ReadMemoryResponse',
@@ -786,42 +803,42 @@ _READMEMORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestAddressSpace', full_name='ReadMemoryResponse.requestAddressSpace', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestMemoryMapping', full_name='ReadMemoryResponse.requestMemoryMapping', index=2,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='deviceAddress', full_name='ReadMemoryResponse.deviceAddress', index=3,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='deviceAddressSpace', full_name='ReadMemoryResponse.deviceAddressSpace', index=4,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='ReadMemoryResponse.data', index=5,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -838,6 +855,7 @@ _READMEMORYRESPONSE = _descriptor.Descriptor(
   serialized_end=1257,
 )
 
+
 _WRITEMEMORYREQUEST = _descriptor.Descriptor(
   name='WriteMemoryRequest',
   full_name='WriteMemoryRequest',
@@ -852,28 +870,28 @@ _WRITEMEMORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestAddressSpace', full_name='WriteMemoryRequest.requestAddressSpace', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestMemoryMapping', full_name='WriteMemoryRequest.requestMemoryMapping', index=2,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='WriteMemoryRequest.data', index=3,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -890,6 +908,7 @@ _WRITEMEMORYREQUEST = _descriptor.Descriptor(
   serialized_end=1408,
 )
 
+
 _WRITEMEMORYRESPONSE = _descriptor.Descriptor(
   name='WriteMemoryResponse',
   full_name='WriteMemoryResponse',
@@ -904,42 +923,42 @@ _WRITEMEMORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestAddressSpace', full_name='WriteMemoryResponse.requestAddressSpace', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requestMemoryMapping', full_name='WriteMemoryResponse.requestMemoryMapping', index=2,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='deviceAddress', full_name='WriteMemoryResponse.deviceAddress', index=3,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='deviceAddressSpace', full_name='WriteMemoryResponse.deviceAddressSpace', index=4,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='WriteMemoryResponse.size', index=5,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -956,6 +975,7 @@ _WRITEMEMORYRESPONSE = _descriptor.Descriptor(
   serialized_end=1626,
 )
 
+
 _SINGLEREADMEMORYREQUEST = _descriptor.Descriptor(
   name='SingleReadMemoryRequest',
   full_name='SingleReadMemoryRequest',
@@ -970,14 +990,14 @@ _SINGLEREADMEMORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='request', full_name='SingleReadMemoryRequest.request', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -994,6 +1014,7 @@ _SINGLEREADMEMORYREQUEST = _descriptor.Descriptor(
   serialized_end=1703,
 )
 
+
 _SINGLEREADMEMORYRESPONSE = _descriptor.Descriptor(
   name='SingleReadMemoryResponse',
   full_name='SingleReadMemoryResponse',
@@ -1008,14 +1029,14 @@ _SINGLEREADMEMORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='response', full_name='SingleReadMemoryResponse.response', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1032,6 +1053,7 @@ _SINGLEREADMEMORYRESPONSE = _descriptor.Descriptor(
   serialized_end=1783,
 )
 
+
 _SINGLEWRITEMEMORYREQUEST = _descriptor.Descriptor(
   name='SingleWriteMemoryRequest',
   full_name='SingleWriteMemoryRequest',
@@ -1046,14 +1068,14 @@ _SINGLEWRITEMEMORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='request', full_name='SingleWriteMemoryRequest.request', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1070,6 +1092,7 @@ _SINGLEWRITEMEMORYREQUEST = _descriptor.Descriptor(
   serialized_end=1862,
 )
 
+
 _SINGLEWRITEMEMORYRESPONSE = _descriptor.Descriptor(
   name='SingleWriteMemoryResponse',
   full_name='SingleWriteMemoryResponse',
@@ -1084,14 +1107,14 @@ _SINGLEWRITEMEMORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='response', full_name='SingleWriteMemoryResponse.response', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1108,6 +1131,7 @@ _SINGLEWRITEMEMORYRESPONSE = _descriptor.Descriptor(
   serialized_end=1944,
 )
 
+
 _MULTIREADMEMORYREQUEST = _descriptor.Descriptor(
   name='MultiReadMemoryRequest',
   full_name='MultiReadMemoryRequest',
@@ -1122,14 +1146,14 @@ _MULTIREADMEMORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requests', full_name='MultiReadMemoryRequest.requests', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1146,6 +1170,7 @@ _MULTIREADMEMORYREQUEST = _descriptor.Descriptor(
   serialized_end=2021,
 )
 
+
 _MULTIREADMEMORYRESPONSE = _descriptor.Descriptor(
   name='MultiReadMemoryResponse',
   full_name='MultiReadMemoryResponse',
@@ -1160,14 +1185,14 @@ _MULTIREADMEMORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='responses', full_name='MultiReadMemoryResponse.responses', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1184,6 +1209,7 @@ _MULTIREADMEMORYRESPONSE = _descriptor.Descriptor(
   serialized_end=2101,
 )
 
+
 _MULTIWRITEMEMORYREQUEST = _descriptor.Descriptor(
   name='MultiWriteMemoryRequest',
   full_name='MultiWriteMemoryRequest',
@@ -1198,14 +1224,14 @@ _MULTIWRITEMEMORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='requests', full_name='MultiWriteMemoryRequest.requests', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1222,6 +1248,7 @@ _MULTIWRITEMEMORYREQUEST = _descriptor.Descriptor(
   serialized_end=2180,
 )
 
+
 _MULTIWRITEMEMORYRESPONSE = _descriptor.Descriptor(
   name='MultiWriteMemoryResponse',
   full_name='MultiWriteMemoryResponse',
@@ -1236,14 +1263,14 @@ _MULTIWRITEMEMORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='responses', full_name='MultiWriteMemoryResponse.responses', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1260,6 +1287,7 @@ _MULTIWRITEMEMORYRESPONSE = _descriptor.Descriptor(
   serialized_end=2262,
 )
 
+
 _READDIRECTORYREQUEST = _descriptor.Descriptor(
   name='ReadDirectoryRequest',
   full_name='ReadDirectoryRequest',
@@ -1274,14 +1302,14 @@ _READDIRECTORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='ReadDirectoryRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1298,6 +1326,7 @@ _READDIRECTORYREQUEST = _descriptor.Descriptor(
   serialized_end=2313,
 )
 
+
 _DIRENTRY = _descriptor.Descriptor(
   name='DirEntry',
   full_name='DirEntry',
@@ -1312,14 +1341,14 @@ _DIRENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='DirEntry.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1336,6 +1365,7 @@ _DIRENTRY = _descriptor.Descriptor(
   serialized_end=2368,
 )
 
+
 _READDIRECTORYRESPONSE = _descriptor.Descriptor(
   name='ReadDirectoryResponse',
   full_name='ReadDirectoryResponse',
@@ -1350,21 +1380,21 @@ _READDIRECTORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='ReadDirectoryResponse.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='entries', full_name='ReadDirectoryResponse.entries', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1381,6 +1411,7 @@ _READDIRECTORYRESPONSE = _descriptor.Descriptor(
   serialized_end=2448,
 )
 
+
 _MAKEDIRECTORYREQUEST = _descriptor.Descriptor(
   name='MakeDirectoryRequest',
   full_name='MakeDirectoryRequest',
@@ -1395,14 +1426,14 @@ _MAKEDIRECTORYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='MakeDirectoryRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1419,6 +1450,7 @@ _MAKEDIRECTORYREQUEST = _descriptor.Descriptor(
   serialized_end=2499,
 )
 
+
 _MAKEDIRECTORYRESPONSE = _descriptor.Descriptor(
   name='MakeDirectoryResponse',
   full_name='MakeDirectoryResponse',
@@ -1433,14 +1465,14 @@ _MAKEDIRECTORYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='MakeDirectoryResponse.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1457,6 +1489,7 @@ _MAKEDIRECTORYRESPONSE = _descriptor.Descriptor(
   serialized_end=2551,
 )
 
+
 _REMOVEFILEREQUEST = _descriptor.Descriptor(
   name='RemoveFileRequest',
   full_name='RemoveFileRequest',
@@ -1471,14 +1504,14 @@ _REMOVEFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='RemoveFileRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1495,6 +1528,7 @@ _REMOVEFILEREQUEST = _descriptor.Descriptor(
   serialized_end=2599,
 )
 
+
 _REMOVEFILERESPONSE = _descriptor.Descriptor(
   name='RemoveFileResponse',
   full_name='RemoveFileResponse',
@@ -1509,14 +1543,14 @@ _REMOVEFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='RemoveFileResponse.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1533,6 +1567,7 @@ _REMOVEFILERESPONSE = _descriptor.Descriptor(
   serialized_end=2648,
 )
 
+
 _RENAMEFILEREQUEST = _descriptor.Descriptor(
   name='RenameFileRequest',
   full_name='RenameFileRequest',
@@ -1547,21 +1582,21 @@ _RENAMEFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='RenameFileRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='newFilename', full_name='RenameFileRequest.newFilename', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1578,6 +1613,7 @@ _RENAMEFILEREQUEST = _descriptor.Descriptor(
   serialized_end=2717,
 )
 
+
 _RENAMEFILERESPONSE = _descriptor.Descriptor(
   name='RenameFileResponse',
   full_name='RenameFileResponse',
@@ -1592,21 +1628,21 @@ _RENAMEFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='RenameFileResponse.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='newFilename', full_name='RenameFileResponse.newFilename', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1623,6 +1659,7 @@ _RENAMEFILERESPONSE = _descriptor.Descriptor(
   serialized_end=2787,
 )
 
+
 _PUTFILEREQUEST = _descriptor.Descriptor(
   name='PutFileRequest',
   full_name='PutFileRequest',
@@ -1637,21 +1674,21 @@ _PUTFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='PutFileRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='PutFileRequest.data', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1668,6 +1705,7 @@ _PUTFILEREQUEST = _descriptor.Descriptor(
   serialized_end=2846,
 )
 
+
 _PUTFILERESPONSE = _descriptor.Descriptor(
   name='PutFileResponse',
   full_name='PutFileResponse',
@@ -1682,21 +1720,21 @@ _PUTFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='PutFileResponse.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='PutFileResponse.size', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1713,6 +1751,7 @@ _PUTFILERESPONSE = _descriptor.Descriptor(
   serialized_end=2906,
 )
 
+
 _GETFILEREQUEST = _descriptor.Descriptor(
   name='GetFileRequest',
   full_name='GetFileRequest',
@@ -1727,14 +1766,14 @@ _GETFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='GetFileRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1751,6 +1790,7 @@ _GETFILEREQUEST = _descriptor.Descriptor(
   serialized_end=2951,
 )
 
+
 _GETFILERESPONSE = _descriptor.Descriptor(
   name='GetFileResponse',
   full_name='GetFileResponse',
@@ -1765,28 +1805,28 @@ _GETFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='GetFileResponse.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='GetFileResponse.size', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='GetFileResponse.data', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1803,6 +1843,7 @@ _GETFILERESPONSE = _descriptor.Descriptor(
   serialized_end=3025,
 )
 
+
 _BOOTFILEREQUEST = _descriptor.Descriptor(
   name='BootFileRequest',
   full_name='BootFileRequest',
@@ -1817,14 +1858,14 @@ _BOOTFILEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='BootFileRequest.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1841,6 +1882,7 @@ _BOOTFILEREQUEST = _descriptor.Descriptor(
   serialized_end=3071,
 )
 
+
 _BOOTFILERESPONSE = _descriptor.Descriptor(
   name='BootFileResponse',
   full_name='BootFileResponse',
@@ -1855,14 +1897,14 @@ _BOOTFILERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='path', full_name='BootFileResponse.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR, create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1886,12 +1928,10 @@ _DEVICESRESPONSE.fields_by_name['devices'].message_type = _DEVICESRESPONSE_DEVIC
 _DETECTMEMORYMAPPINGREQUEST.fields_by_name['fallbackMemoryMapping'].enum_type = _MEMORYMAPPING
 _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_fallbackMemoryMapping'].fields.append(
   _DETECTMEMORYMAPPINGREQUEST.fields_by_name['fallbackMemoryMapping'])
-_DETECTMEMORYMAPPINGREQUEST.fields_by_name['fallbackMemoryMapping'].containing_oneof = \
-  _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_fallbackMemoryMapping']
+_DETECTMEMORYMAPPINGREQUEST.fields_by_name['fallbackMemoryMapping'].containing_oneof = _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_fallbackMemoryMapping']
 _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_romHeader00FFB0'].fields.append(
   _DETECTMEMORYMAPPINGREQUEST.fields_by_name['romHeader00FFB0'])
-_DETECTMEMORYMAPPINGREQUEST.fields_by_name['romHeader00FFB0'].containing_oneof = \
-  _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_romHeader00FFB0']
+_DETECTMEMORYMAPPINGREQUEST.fields_by_name['romHeader00FFB0'].containing_oneof = _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_romHeader00FFB0']
 _DETECTMEMORYMAPPINGRESPONSE.fields_by_name['memoryMapping'].enum_type = _MEMORYMAPPING
 _READMEMORYREQUEST.fields_by_name['requestAddressSpace'].enum_type = _ADDRESSSPACE
 _READMEMORYREQUEST.fields_by_name['requestMemoryMapping'].enum_type = _MEMORYMAPPING
@@ -1959,289 +1999,286 @@ DESCRIPTOR.enum_types_by_name['DirEntryType'] = _DIRENTRYTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DevicesRequest = _reflection.GeneratedProtocolMessageType('DevicesRequest', (_message.Message,), {
-  'DESCRIPTOR': _DEVICESREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _DEVICESREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:DevicesRequest)
-})
+  })
 _sym_db.RegisterMessage(DevicesRequest)
 
 DevicesResponse = _reflection.GeneratedProtocolMessageType('DevicesResponse', (_message.Message,), {
 
-  'Device': _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), {
-    'DESCRIPTOR': _DEVICESRESPONSE_DEVICE,
-    '__module__': 'sni_pb2'
+  'Device' : _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), {
+    'DESCRIPTOR' : _DEVICESRESPONSE_DEVICE,
+    '__module__' : 'sni_pb2'
     # @@protoc_insertion_point(class_scope:DevicesResponse.Device)
-  })
+    })
   ,
-  'DESCRIPTOR': _DEVICESRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _DEVICESRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:DevicesResponse)
-})
+  })
 _sym_db.RegisterMessage(DevicesResponse)
 _sym_db.RegisterMessage(DevicesResponse.Device)
 
 ResetSystemRequest = _reflection.GeneratedProtocolMessageType('ResetSystemRequest', (_message.Message,), {
-  'DESCRIPTOR': _RESETSYSTEMREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _RESETSYSTEMREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ResetSystemRequest)
-})
+  })
 _sym_db.RegisterMessage(ResetSystemRequest)
 
 ResetSystemResponse = _reflection.GeneratedProtocolMessageType('ResetSystemResponse', (_message.Message,), {
-  'DESCRIPTOR': _RESETSYSTEMRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _RESETSYSTEMRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ResetSystemResponse)
-})
+  })
 _sym_db.RegisterMessage(ResetSystemResponse)
 
 ResetToMenuRequest = _reflection.GeneratedProtocolMessageType('ResetToMenuRequest', (_message.Message,), {
-  'DESCRIPTOR': _RESETTOMENUREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _RESETTOMENUREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ResetToMenuRequest)
-})
+  })
 _sym_db.RegisterMessage(ResetToMenuRequest)
 
 ResetToMenuResponse = _reflection.GeneratedProtocolMessageType('ResetToMenuResponse', (_message.Message,), {
-  'DESCRIPTOR': _RESETTOMENURESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _RESETTOMENURESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ResetToMenuResponse)
-})
+  })
 _sym_db.RegisterMessage(ResetToMenuResponse)
 
 PauseEmulationRequest = _reflection.GeneratedProtocolMessageType('PauseEmulationRequest', (_message.Message,), {
-  'DESCRIPTOR': _PAUSEEMULATIONREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _PAUSEEMULATIONREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:PauseEmulationRequest)
-})
+  })
 _sym_db.RegisterMessage(PauseEmulationRequest)
 
 PauseEmulationResponse = _reflection.GeneratedProtocolMessageType('PauseEmulationResponse', (_message.Message,), {
-  'DESCRIPTOR': _PAUSEEMULATIONRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _PAUSEEMULATIONRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:PauseEmulationResponse)
-})
+  })
 _sym_db.RegisterMessage(PauseEmulationResponse)
 
-PauseToggleEmulationRequest = _reflection.GeneratedProtocolMessageType('PauseToggleEmulationRequest',
-                                                                       (_message.Message,), {
-                                                                         'DESCRIPTOR': _PAUSETOGGLEEMULATIONREQUEST,
-                                                                         '__module__': 'sni_pb2'
-                                                                         # @@protoc_insertion_point(class_scope:PauseToggleEmulationRequest)
-                                                                       })
+PauseToggleEmulationRequest = _reflection.GeneratedProtocolMessageType('PauseToggleEmulationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSETOGGLEEMULATIONREQUEST,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:PauseToggleEmulationRequest)
+  })
 _sym_db.RegisterMessage(PauseToggleEmulationRequest)
 
-PauseToggleEmulationResponse = _reflection.GeneratedProtocolMessageType('PauseToggleEmulationResponse',
-                                                                        (_message.Message,), {
-                                                                          'DESCRIPTOR': _PAUSETOGGLEEMULATIONRESPONSE,
-                                                                          '__module__': 'sni_pb2'
-                                                                          # @@protoc_insertion_point(class_scope:PauseToggleEmulationResponse)
-                                                                        })
+PauseToggleEmulationResponse = _reflection.GeneratedProtocolMessageType('PauseToggleEmulationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSETOGGLEEMULATIONRESPONSE,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:PauseToggleEmulationResponse)
+  })
 _sym_db.RegisterMessage(PauseToggleEmulationResponse)
 
-DetectMemoryMappingRequest = _reflection.GeneratedProtocolMessageType('DetectMemoryMappingRequest', (_message.Message,),
-                                                                      {
-                                                                        'DESCRIPTOR': _DETECTMEMORYMAPPINGREQUEST,
-                                                                        '__module__': 'sni_pb2'
-                                                                        # @@protoc_insertion_point(class_scope:DetectMemoryMappingRequest)
-                                                                      })
+DetectMemoryMappingRequest = _reflection.GeneratedProtocolMessageType('DetectMemoryMappingRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DETECTMEMORYMAPPINGREQUEST,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:DetectMemoryMappingRequest)
+  })
 _sym_db.RegisterMessage(DetectMemoryMappingRequest)
 
-DetectMemoryMappingResponse = _reflection.GeneratedProtocolMessageType('DetectMemoryMappingResponse',
-                                                                       (_message.Message,), {
-                                                                         'DESCRIPTOR': _DETECTMEMORYMAPPINGRESPONSE,
-                                                                         '__module__': 'sni_pb2'
-                                                                         # @@protoc_insertion_point(class_scope:DetectMemoryMappingResponse)
-                                                                       })
+DetectMemoryMappingResponse = _reflection.GeneratedProtocolMessageType('DetectMemoryMappingResponse', (_message.Message,), {
+  'DESCRIPTOR' : _DETECTMEMORYMAPPINGRESPONSE,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:DetectMemoryMappingResponse)
+  })
 _sym_db.RegisterMessage(DetectMemoryMappingResponse)
 
 ReadMemoryRequest = _reflection.GeneratedProtocolMessageType('ReadMemoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _READMEMORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _READMEMORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ReadMemoryRequest)
-})
+  })
 _sym_db.RegisterMessage(ReadMemoryRequest)
 
 ReadMemoryResponse = _reflection.GeneratedProtocolMessageType('ReadMemoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _READMEMORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _READMEMORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ReadMemoryResponse)
-})
+  })
 _sym_db.RegisterMessage(ReadMemoryResponse)
 
 WriteMemoryRequest = _reflection.GeneratedProtocolMessageType('WriteMemoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _WRITEMEMORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _WRITEMEMORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:WriteMemoryRequest)
-})
+  })
 _sym_db.RegisterMessage(WriteMemoryRequest)
 
 WriteMemoryResponse = _reflection.GeneratedProtocolMessageType('WriteMemoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _WRITEMEMORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _WRITEMEMORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:WriteMemoryResponse)
-})
+  })
 _sym_db.RegisterMessage(WriteMemoryResponse)
 
 SingleReadMemoryRequest = _reflection.GeneratedProtocolMessageType('SingleReadMemoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _SINGLEREADMEMORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _SINGLEREADMEMORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:SingleReadMemoryRequest)
-})
+  })
 _sym_db.RegisterMessage(SingleReadMemoryRequest)
 
 SingleReadMemoryResponse = _reflection.GeneratedProtocolMessageType('SingleReadMemoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _SINGLEREADMEMORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _SINGLEREADMEMORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:SingleReadMemoryResponse)
-})
+  })
 _sym_db.RegisterMessage(SingleReadMemoryResponse)
 
 SingleWriteMemoryRequest = _reflection.GeneratedProtocolMessageType('SingleWriteMemoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _SINGLEWRITEMEMORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _SINGLEWRITEMEMORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:SingleWriteMemoryRequest)
-})
+  })
 _sym_db.RegisterMessage(SingleWriteMemoryRequest)
 
 SingleWriteMemoryResponse = _reflection.GeneratedProtocolMessageType('SingleWriteMemoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _SINGLEWRITEMEMORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _SINGLEWRITEMEMORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:SingleWriteMemoryResponse)
-})
+  })
 _sym_db.RegisterMessage(SingleWriteMemoryResponse)
 
 MultiReadMemoryRequest = _reflection.GeneratedProtocolMessageType('MultiReadMemoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _MULTIREADMEMORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _MULTIREADMEMORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:MultiReadMemoryRequest)
-})
+  })
 _sym_db.RegisterMessage(MultiReadMemoryRequest)
 
 MultiReadMemoryResponse = _reflection.GeneratedProtocolMessageType('MultiReadMemoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _MULTIREADMEMORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _MULTIREADMEMORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:MultiReadMemoryResponse)
-})
+  })
 _sym_db.RegisterMessage(MultiReadMemoryResponse)
 
 MultiWriteMemoryRequest = _reflection.GeneratedProtocolMessageType('MultiWriteMemoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _MULTIWRITEMEMORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _MULTIWRITEMEMORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:MultiWriteMemoryRequest)
-})
+  })
 _sym_db.RegisterMessage(MultiWriteMemoryRequest)
 
 MultiWriteMemoryResponse = _reflection.GeneratedProtocolMessageType('MultiWriteMemoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _MULTIWRITEMEMORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _MULTIWRITEMEMORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:MultiWriteMemoryResponse)
-})
+  })
 _sym_db.RegisterMessage(MultiWriteMemoryResponse)
 
 ReadDirectoryRequest = _reflection.GeneratedProtocolMessageType('ReadDirectoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _READDIRECTORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _READDIRECTORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ReadDirectoryRequest)
-})
+  })
 _sym_db.RegisterMessage(ReadDirectoryRequest)
 
 DirEntry = _reflection.GeneratedProtocolMessageType('DirEntry', (_message.Message,), {
-  'DESCRIPTOR': _DIRENTRY,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _DIRENTRY,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:DirEntry)
-})
+  })
 _sym_db.RegisterMessage(DirEntry)
 
 ReadDirectoryResponse = _reflection.GeneratedProtocolMessageType('ReadDirectoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _READDIRECTORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _READDIRECTORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:ReadDirectoryResponse)
-})
+  })
 _sym_db.RegisterMessage(ReadDirectoryResponse)
 
 MakeDirectoryRequest = _reflection.GeneratedProtocolMessageType('MakeDirectoryRequest', (_message.Message,), {
-  'DESCRIPTOR': _MAKEDIRECTORYREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _MAKEDIRECTORYREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:MakeDirectoryRequest)
-})
+  })
 _sym_db.RegisterMessage(MakeDirectoryRequest)
 
 MakeDirectoryResponse = _reflection.GeneratedProtocolMessageType('MakeDirectoryResponse', (_message.Message,), {
-  'DESCRIPTOR': _MAKEDIRECTORYRESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _MAKEDIRECTORYRESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:MakeDirectoryResponse)
-})
+  })
 _sym_db.RegisterMessage(MakeDirectoryResponse)
 
 RemoveFileRequest = _reflection.GeneratedProtocolMessageType('RemoveFileRequest', (_message.Message,), {
-  'DESCRIPTOR': _REMOVEFILEREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _REMOVEFILEREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:RemoveFileRequest)
-})
+  })
 _sym_db.RegisterMessage(RemoveFileRequest)
 
 RemoveFileResponse = _reflection.GeneratedProtocolMessageType('RemoveFileResponse', (_message.Message,), {
-  'DESCRIPTOR': _REMOVEFILERESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _REMOVEFILERESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:RemoveFileResponse)
-})
+  })
 _sym_db.RegisterMessage(RemoveFileResponse)
 
 RenameFileRequest = _reflection.GeneratedProtocolMessageType('RenameFileRequest', (_message.Message,), {
-  'DESCRIPTOR': _RENAMEFILEREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _RENAMEFILEREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:RenameFileRequest)
-})
+  })
 _sym_db.RegisterMessage(RenameFileRequest)
 
 RenameFileResponse = _reflection.GeneratedProtocolMessageType('RenameFileResponse', (_message.Message,), {
-  'DESCRIPTOR': _RENAMEFILERESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _RENAMEFILERESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:RenameFileResponse)
-})
+  })
 _sym_db.RegisterMessage(RenameFileResponse)
 
 PutFileRequest = _reflection.GeneratedProtocolMessageType('PutFileRequest', (_message.Message,), {
-  'DESCRIPTOR': _PUTFILEREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _PUTFILEREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:PutFileRequest)
-})
+  })
 _sym_db.RegisterMessage(PutFileRequest)
 
 PutFileResponse = _reflection.GeneratedProtocolMessageType('PutFileResponse', (_message.Message,), {
-  'DESCRIPTOR': _PUTFILERESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _PUTFILERESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:PutFileResponse)
-})
+  })
 _sym_db.RegisterMessage(PutFileResponse)
 
 GetFileRequest = _reflection.GeneratedProtocolMessageType('GetFileRequest', (_message.Message,), {
-  'DESCRIPTOR': _GETFILEREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _GETFILEREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:GetFileRequest)
-})
+  })
 _sym_db.RegisterMessage(GetFileRequest)
 
 GetFileResponse = _reflection.GeneratedProtocolMessageType('GetFileResponse', (_message.Message,), {
-  'DESCRIPTOR': _GETFILERESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _GETFILERESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:GetFileResponse)
-})
+  })
 _sym_db.RegisterMessage(GetFileResponse)
 
 BootFileRequest = _reflection.GeneratedProtocolMessageType('BootFileRequest', (_message.Message,), {
-  'DESCRIPTOR': _BOOTFILEREQUEST,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _BOOTFILEREQUEST,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:BootFileRequest)
-})
+  })
 _sym_db.RegisterMessage(BootFileRequest)
 
 BootFileResponse = _reflection.GeneratedProtocolMessageType('BootFileResponse', (_message.Message,), {
-  'DESCRIPTOR': _BOOTFILERESPONSE,
-  '__module__': 'sni_pb2'
+  'DESCRIPTOR' : _BOOTFILERESPONSE,
+  '__module__' : 'sni_pb2'
   # @@protoc_insertion_point(class_scope:BootFileResponse)
-})
+  })
 _sym_db.RegisterMessage(BootFileResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -2255,20 +2292,21 @@ _DEVICES = _descriptor.ServiceDescriptor(
   serialized_start=3556,
   serialized_end=3617,
   methods=[
-    _descriptor.MethodDescriptor(
-      name='ListDevices',
-      full_name='Devices.ListDevices',
-      index=0,
-      containing_service=None,
-      input_type=_DEVICESREQUEST,
-      output_type=_DEVICESRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-  ])
+  _descriptor.MethodDescriptor(
+    name='ListDevices',
+    full_name='Devices.ListDevices',
+    index=0,
+    containing_service=None,
+    input_type=_DEVICESREQUEST,
+    output_type=_DEVICESRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
 _sym_db.RegisterServiceDescriptor(_DEVICES)
 
 DESCRIPTOR.services_by_name['Devices'] = _DEVICES
+
 
 _DEVICECONTROL = _descriptor.ServiceDescriptor(
   name='DeviceControl',
@@ -2280,50 +2318,51 @@ _DEVICECONTROL = _descriptor.ServiceDescriptor(
   serialized_start=3620,
   serialized_end=3918,
   methods=[
-    _descriptor.MethodDescriptor(
-      name='ResetSystem',
-      full_name='DeviceControl.ResetSystem',
-      index=0,
-      containing_service=None,
-      input_type=_RESETSYSTEMREQUEST,
-      output_type=_RESETSYSTEMRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='ResetToMenu',
-      full_name='DeviceControl.ResetToMenu',
-      index=1,
-      containing_service=None,
-      input_type=_RESETTOMENUREQUEST,
-      output_type=_RESETTOMENURESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='PauseUnpauseEmulation',
-      full_name='DeviceControl.PauseUnpauseEmulation',
-      index=2,
-      containing_service=None,
-      input_type=_PAUSEEMULATIONREQUEST,
-      output_type=_PAUSEEMULATIONRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='PauseToggleEmulation',
-      full_name='DeviceControl.PauseToggleEmulation',
-      index=3,
-      containing_service=None,
-      input_type=_PAUSETOGGLEEMULATIONREQUEST,
-      output_type=_PAUSETOGGLEEMULATIONRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-  ])
+  _descriptor.MethodDescriptor(
+    name='ResetSystem',
+    full_name='DeviceControl.ResetSystem',
+    index=0,
+    containing_service=None,
+    input_type=_RESETSYSTEMREQUEST,
+    output_type=_RESETSYSTEMRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ResetToMenu',
+    full_name='DeviceControl.ResetToMenu',
+    index=1,
+    containing_service=None,
+    input_type=_RESETTOMENUREQUEST,
+    output_type=_RESETTOMENURESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='PauseUnpauseEmulation',
+    full_name='DeviceControl.PauseUnpauseEmulation',
+    index=2,
+    containing_service=None,
+    input_type=_PAUSEEMULATIONREQUEST,
+    output_type=_PAUSEEMULATIONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='PauseToggleEmulation',
+    full_name='DeviceControl.PauseToggleEmulation',
+    index=3,
+    containing_service=None,
+    input_type=_PAUSETOGGLEEMULATIONREQUEST,
+    output_type=_PAUSETOGGLEEMULATIONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
 _sym_db.RegisterServiceDescriptor(_DEVICECONTROL)
 
 DESCRIPTOR.services_by_name['DeviceControl'] = _DEVICECONTROL
+
 
 _DEVICEMEMORY = _descriptor.ServiceDescriptor(
   name='DeviceMemory',
@@ -2335,80 +2374,81 @@ _DEVICEMEMORY = _descriptor.ServiceDescriptor(
   serialized_start=3921,
   serialized_end=4434,
   methods=[
-    _descriptor.MethodDescriptor(
-      name='MappingDetect',
-      full_name='DeviceMemory.MappingDetect',
-      index=0,
-      containing_service=None,
-      input_type=_DETECTMEMORYMAPPINGREQUEST,
-      output_type=_DETECTMEMORYMAPPINGRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='SingleRead',
-      full_name='DeviceMemory.SingleRead',
-      index=1,
-      containing_service=None,
-      input_type=_SINGLEREADMEMORYREQUEST,
-      output_type=_SINGLEREADMEMORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='SingleWrite',
-      full_name='DeviceMemory.SingleWrite',
-      index=2,
-      containing_service=None,
-      input_type=_SINGLEWRITEMEMORYREQUEST,
-      output_type=_SINGLEWRITEMEMORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='MultiRead',
-      full_name='DeviceMemory.MultiRead',
-      index=3,
-      containing_service=None,
-      input_type=_MULTIREADMEMORYREQUEST,
-      output_type=_MULTIREADMEMORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='MultiWrite',
-      full_name='DeviceMemory.MultiWrite',
-      index=4,
-      containing_service=None,
-      input_type=_MULTIWRITEMEMORYREQUEST,
-      output_type=_MULTIWRITEMEMORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='StreamRead',
-      full_name='DeviceMemory.StreamRead',
-      index=5,
-      containing_service=None,
-      input_type=_MULTIREADMEMORYREQUEST,
-      output_type=_MULTIREADMEMORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='StreamWrite',
-      full_name='DeviceMemory.StreamWrite',
-      index=6,
-      containing_service=None,
-      input_type=_MULTIWRITEMEMORYREQUEST,
-      output_type=_MULTIWRITEMEMORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-  ])
+  _descriptor.MethodDescriptor(
+    name='MappingDetect',
+    full_name='DeviceMemory.MappingDetect',
+    index=0,
+    containing_service=None,
+    input_type=_DETECTMEMORYMAPPINGREQUEST,
+    output_type=_DETECTMEMORYMAPPINGRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SingleRead',
+    full_name='DeviceMemory.SingleRead',
+    index=1,
+    containing_service=None,
+    input_type=_SINGLEREADMEMORYREQUEST,
+    output_type=_SINGLEREADMEMORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SingleWrite',
+    full_name='DeviceMemory.SingleWrite',
+    index=2,
+    containing_service=None,
+    input_type=_SINGLEWRITEMEMORYREQUEST,
+    output_type=_SINGLEWRITEMEMORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='MultiRead',
+    full_name='DeviceMemory.MultiRead',
+    index=3,
+    containing_service=None,
+    input_type=_MULTIREADMEMORYREQUEST,
+    output_type=_MULTIREADMEMORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='MultiWrite',
+    full_name='DeviceMemory.MultiWrite',
+    index=4,
+    containing_service=None,
+    input_type=_MULTIWRITEMEMORYREQUEST,
+    output_type=_MULTIWRITEMEMORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='StreamRead',
+    full_name='DeviceMemory.StreamRead',
+    index=5,
+    containing_service=None,
+    input_type=_MULTIREADMEMORYREQUEST,
+    output_type=_MULTIREADMEMORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='StreamWrite',
+    full_name='DeviceMemory.StreamWrite',
+    index=6,
+    containing_service=None,
+    input_type=_MULTIWRITEMEMORYREQUEST,
+    output_type=_MULTIWRITEMEMORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
 _sym_db.RegisterServiceDescriptor(_DEVICEMEMORY)
 
 DESCRIPTOR.services_by_name['DeviceMemory'] = _DEVICEMEMORY
+
 
 _DEVICEFILESYSTEM = _descriptor.ServiceDescriptor(
   name='DeviceFilesystem',
@@ -2420,77 +2460,77 @@ _DEVICEFILESYSTEM = _descriptor.ServiceDescriptor(
   serialized_start=4437,
   serialized_end=4848,
   methods=[
-    _descriptor.MethodDescriptor(
-      name='ReadDirectory',
-      full_name='DeviceFilesystem.ReadDirectory',
-      index=0,
-      containing_service=None,
-      input_type=_READDIRECTORYREQUEST,
-      output_type=_READDIRECTORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='MakeDirectory',
-      full_name='DeviceFilesystem.MakeDirectory',
-      index=1,
-      containing_service=None,
-      input_type=_MAKEDIRECTORYREQUEST,
-      output_type=_MAKEDIRECTORYRESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='RemoveFile',
-      full_name='DeviceFilesystem.RemoveFile',
-      index=2,
-      containing_service=None,
-      input_type=_REMOVEFILEREQUEST,
-      output_type=_REMOVEFILERESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='RenameFile',
-      full_name='DeviceFilesystem.RenameFile',
-      index=3,
-      containing_service=None,
-      input_type=_RENAMEFILEREQUEST,
-      output_type=_RENAMEFILERESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='PutFile',
-      full_name='DeviceFilesystem.PutFile',
-      index=4,
-      containing_service=None,
-      input_type=_PUTFILEREQUEST,
-      output_type=_PUTFILERESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='GetFile',
-      full_name='DeviceFilesystem.GetFile',
-      index=5,
-      containing_service=None,
-      input_type=_GETFILEREQUEST,
-      output_type=_GETFILERESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-    _descriptor.MethodDescriptor(
-      name='BootFile',
-      full_name='DeviceFilesystem.BootFile',
-      index=6,
-      containing_service=None,
-      input_type=_BOOTFILEREQUEST,
-      output_type=_BOOTFILERESPONSE,
-      serialized_options=None,
-      create_key=_descriptor._internal_create_key,
-    ),
-  ])
+  _descriptor.MethodDescriptor(
+    name='ReadDirectory',
+    full_name='DeviceFilesystem.ReadDirectory',
+    index=0,
+    containing_service=None,
+    input_type=_READDIRECTORYREQUEST,
+    output_type=_READDIRECTORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='MakeDirectory',
+    full_name='DeviceFilesystem.MakeDirectory',
+    index=1,
+    containing_service=None,
+    input_type=_MAKEDIRECTORYREQUEST,
+    output_type=_MAKEDIRECTORYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RemoveFile',
+    full_name='DeviceFilesystem.RemoveFile',
+    index=2,
+    containing_service=None,
+    input_type=_REMOVEFILEREQUEST,
+    output_type=_REMOVEFILERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RenameFile',
+    full_name='DeviceFilesystem.RenameFile',
+    index=3,
+    containing_service=None,
+    input_type=_RENAMEFILEREQUEST,
+    output_type=_RENAMEFILERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='PutFile',
+    full_name='DeviceFilesystem.PutFile',
+    index=4,
+    containing_service=None,
+    input_type=_PUTFILEREQUEST,
+    output_type=_PUTFILERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetFile',
+    full_name='DeviceFilesystem.GetFile',
+    index=5,
+    containing_service=None,
+    input_type=_GETFILEREQUEST,
+    output_type=_GETFILERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='BootFile',
+    full_name='DeviceFilesystem.BootFile',
+    index=6,
+    containing_service=None,
+    input_type=_BOOTFILEREQUEST,
+    output_type=_BOOTFILERESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
 _sym_db.RegisterServiceDescriptor(_DEVICEFILESYSTEM)
 
 DESCRIPTOR.services_by_name['DeviceFilesystem'] = _DEVICEFILESYSTEM
