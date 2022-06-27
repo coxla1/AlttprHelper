@@ -4,6 +4,7 @@
 """Generated protocol buffer code."""
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -14,198 +15,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='sni.proto',
-  package='',
-  syntax='proto3',
-  serialized_options=b'Z github.com/alttpo/sni/protos/sni',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tsni.proto\"\x1f\n\x0e\x44\x65vicesRequest\x12\r\n\x05kinds\x18\x01 \x03(\t\"\xcb\x01\n\x0f\x44\x65vicesResponse\x12(\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x17.DevicesResponse.Device\x1a\x8d\x01\n\x06\x44\x65vice\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x13\n\x0b\x64isplayName\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12\'\n\x0c\x63\x61pabilities\x18\x04 \x03(\x0e\x32\x11.DeviceCapability\x12*\n\x13\x64\x65\x66\x61ultAddressSpace\x18\x05 \x01(\x0e\x32\r.AddressSpace\"!\n\x12ResetSystemRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\"\n\x13ResetSystemResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"!\n\x12ResetToMenuRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\"\n\x13ResetToMenuResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"4\n\x15PauseEmulationRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0e\n\x06paused\x18\x02 \x01(\x08\"5\n\x16PauseEmulationResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0e\n\x06paused\x18\x02 \x01(\x08\"*\n\x1bPauseToggleEmulationRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\"+\n\x1cPauseToggleEmulationResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xa9\x01\n\x1a\x44\x65tectMemoryMappingRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x32\n\x15\x66\x61llbackMemoryMapping\x18\x02 \x01(\x0e\x32\x0e.MemoryMappingH\x00\x88\x01\x01\x12\x1c\n\x0fromHeader00FFB0\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x42\x18\n\x16_fallbackMemoryMappingB\x12\n\x10_romHeader00FFB0\"~\n\x1b\x44\x65tectMemoryMappingResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12%\n\rmemoryMapping\x18\x02 \x01(\x0e\x32\x0e.MemoryMapping\x12\x12\n\nconfidence\x18\x03 \x01(\x08\x12\x17\n\x0fromHeader00FFB0\x18\x04 \x01(\x0c\"\x93\x01\n\x11ReadMemoryRequest\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x04 \x01(\x0e\x32\x0e.MemoryMapping\x12\x0c\n\x04size\x18\x03 \x01(\r\"\xd6\x01\n\x12ReadMemoryResponse\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x06 \x01(\x0e\x32\x0e.MemoryMapping\x12\x15\n\rdeviceAddress\x18\x03 \x01(\r\x12)\n\x12\x64\x65viceAddressSpace\x18\x04 \x01(\x0e\x32\r.AddressSpace\x12\x0c\n\x04\x64\x61ta\x18\x05 \x01(\x0c\"\x94\x01\n\x12WriteMemoryRequest\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x04 \x01(\x0e\x32\x0e.MemoryMapping\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\xd7\x01\n\x13WriteMemoryResponse\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x06 \x01(\x0e\x32\x0e.MemoryMapping\x12\x15\n\rdeviceAddress\x18\x03 \x01(\r\x12)\n\x12\x64\x65viceAddressSpace\x18\x04 \x01(\x0e\x32\r.AddressSpace\x12\x0c\n\x04size\x18\x05 \x01(\r\"K\n\x17SingleReadMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12#\n\x07request\x18\x02 \x01(\x0b\x32\x12.ReadMemoryRequest\"N\n\x18SingleReadMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12%\n\x08response\x18\x02 \x01(\x0b\x32\x13.ReadMemoryResponse\"M\n\x18SingleWriteMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12$\n\x07request\x18\x02 \x01(\x0b\x32\x13.WriteMemoryRequest\"P\n\x19SingleWriteMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12&\n\x08response\x18\x02 \x01(\x0b\x32\x14.WriteMemoryResponse\"K\n\x16MultiReadMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12$\n\x08requests\x18\x02 \x03(\x0b\x32\x12.ReadMemoryRequest\"N\n\x17MultiReadMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12&\n\tresponses\x18\x02 \x03(\x0b\x32\x13.ReadMemoryResponse\"M\n\x17MultiWriteMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12%\n\x08requests\x18\x02 \x03(\x0b\x32\x13.WriteMemoryRequest\"P\n\x18MultiWriteMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\tresponses\x18\x02 \x03(\x0b\x32\x14.WriteMemoryResponse\"1\n\x14ReadDirectoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"5\n\x08\x44irEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1b\n\x04type\x18\x02 \x01(\x0e\x32\r.DirEntryType\"N\n\x15ReadDirectoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x1a\n\x07\x65ntries\x18\x03 \x03(\x0b\x32\t.DirEntry\"1\n\x14MakeDirectoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"2\n\x15MakeDirectoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\".\n\x11RemoveFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"/\n\x12RemoveFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"C\n\x11RenameFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x13\n\x0bnewFilename\x18\x03 \x01(\t\"D\n\x12RenameFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x13\n\x0bnewFilename\x18\x03 \x01(\t\"9\n\x0ePutFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\":\n\x0fPutFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\r\"+\n\x0eGetFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"H\n\x0fGetFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\",\n\x0f\x42ootFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"-\n\x10\x42ootFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t*3\n\x0c\x41\x64\x64ressSpace\x12\x0c\n\x08\x46xPakPro\x10\x00\x12\x0c\n\x08SnesABus\x10\x01\x12\x07\n\x03Raw\x10\x02*?\n\rMemoryMapping\x12\x0b\n\x07Unknown\x10\x00\x12\t\n\x05HiROM\x10\x01\x12\t\n\x05LoROM\x10\x02\x12\x0b\n\x07\x45xHiROM\x10\x03*\x92\x02\n\x10\x44\x65viceCapability\x12\x08\n\x04None\x10\x00\x12\x0e\n\nReadMemory\x10\x01\x12\x0f\n\x0bWriteMemory\x10\x02\x12\x0e\n\nExecuteASM\x10\x03\x12\x0f\n\x0bResetSystem\x10\x04\x12\x19\n\x15PauseUnpauseEmulation\x10\x05\x12\x18\n\x14PauseToggleEmulation\x10\x06\x12\x0f\n\x0bResetToMenu\x10\x07\x12\x11\n\rReadDirectory\x10\n\x12\x11\n\rMakeDirectory\x10\x0b\x12\x0e\n\nRemoveFile\x10\x0c\x12\x0e\n\nRenameFile\x10\r\x12\x0b\n\x07PutFile\x10\x0e\x12\x0b\n\x07GetFile\x10\x0f\x12\x0c\n\x08\x42ootFile\x10\x10*\'\n\x0c\x44irEntryType\x12\r\n\tDirectory\x10\x00\x12\x08\n\x04\x46ile\x10\x01\x32=\n\x07\x44\x65vices\x12\x32\n\x0bListDevices\x12\x0f.DevicesRequest\x1a\x10.DevicesResponse\"\x00\x32\xaa\x02\n\rDeviceControl\x12:\n\x0bResetSystem\x12\x13.ResetSystemRequest\x1a\x14.ResetSystemResponse\"\x00\x12:\n\x0bResetToMenu\x12\x13.ResetToMenuRequest\x1a\x14.ResetToMenuResponse\"\x00\x12J\n\x15PauseUnpauseEmulation\x12\x16.PauseEmulationRequest\x1a\x17.PauseEmulationResponse\"\x00\x12U\n\x14PauseToggleEmulation\x12\x1c.PauseToggleEmulationRequest\x1a\x1d.PauseToggleEmulationResponse\"\x00\x32\x81\x04\n\x0c\x44\x65viceMemory\x12L\n\rMappingDetect\x12\x1b.DetectMemoryMappingRequest\x1a\x1c.DetectMemoryMappingResponse\"\x00\x12\x43\n\nSingleRead\x12\x18.SingleReadMemoryRequest\x1a\x19.SingleReadMemoryResponse\"\x00\x12\x46\n\x0bSingleWrite\x12\x19.SingleWriteMemoryRequest\x1a\x1a.SingleWriteMemoryResponse\"\x00\x12@\n\tMultiRead\x12\x17.MultiReadMemoryRequest\x1a\x18.MultiReadMemoryResponse\"\x00\x12\x43\n\nMultiWrite\x12\x18.MultiWriteMemoryRequest\x1a\x19.MultiWriteMemoryResponse\"\x00\x12\x45\n\nStreamRead\x12\x17.MultiReadMemoryRequest\x1a\x18.MultiReadMemoryResponse\"\x00(\x01\x30\x01\x12H\n\x0bStreamWrite\x12\x18.MultiWriteMemoryRequest\x1a\x19.MultiWriteMemoryResponse\"\x00(\x01\x30\x01\x32\x9b\x03\n\x10\x44\x65viceFilesystem\x12@\n\rReadDirectory\x12\x15.ReadDirectoryRequest\x1a\x16.ReadDirectoryResponse\"\x00\x12@\n\rMakeDirectory\x12\x15.MakeDirectoryRequest\x1a\x16.MakeDirectoryResponse\"\x00\x12\x37\n\nRemoveFile\x12\x12.RemoveFileRequest\x1a\x13.RemoveFileResponse\"\x00\x12\x37\n\nRenameFile\x12\x12.RenameFileRequest\x1a\x13.RenameFileResponse\"\x00\x12.\n\x07PutFile\x12\x0f.PutFileRequest\x1a\x10.PutFileResponse\"\x00\x12.\n\x07GetFile\x12\x0f.GetFileRequest\x1a\x10.GetFileResponse\"\x00\x12\x31\n\x08\x42ootFile\x12\x10.BootFileRequest\x1a\x11.BootFileResponse\"\x00\x42\"Z github.com/alttpo/sni/protos/snib\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tsni.proto\"\x1f\n\x0e\x44\x65vicesRequest\x12\r\n\x05kinds\x18\x01 \x03(\t\"\xdf\x01\n\x0f\x44\x65vicesResponse\x12(\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x17.DevicesResponse.Device\x1a\xa1\x01\n\x06\x44\x65vice\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x13\n\x0b\x64isplayName\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12\'\n\x0c\x63\x61pabilities\x18\x04 \x03(\x0e\x32\x11.DeviceCapability\x12*\n\x13\x64\x65\x66\x61ultAddressSpace\x18\x05 \x01(\x0e\x32\r.AddressSpace\x12\x12\n\x06system\x18\x06 \x01(\tB\x02\x18\x01\"!\n\x12ResetSystemRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\"\n\x13ResetSystemResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"!\n\x12ResetToMenuRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\"\n\x13ResetToMenuResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"4\n\x15PauseEmulationRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0e\n\x06paused\x18\x02 \x01(\x08\"5\n\x16PauseEmulationResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0e\n\x06paused\x18\x02 \x01(\x08\"*\n\x1bPauseToggleEmulationRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\"+\n\x1cPauseToggleEmulationResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xa9\x01\n\x1a\x44\x65tectMemoryMappingRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x32\n\x15\x66\x61llbackMemoryMapping\x18\x02 \x01(\x0e\x32\x0e.MemoryMappingH\x00\x88\x01\x01\x12\x1c\n\x0fromHeader00FFB0\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x42\x18\n\x16_fallbackMemoryMappingB\x12\n\x10_romHeader00FFB0\"~\n\x1b\x44\x65tectMemoryMappingResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12%\n\rmemoryMapping\x18\x02 \x01(\x0e\x32\x0e.MemoryMapping\x12\x12\n\nconfidence\x18\x03 \x01(\x08\x12\x17\n\x0fromHeader00FFB0\x18\x04 \x01(\x0c\"\x93\x01\n\x11ReadMemoryRequest\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x04 \x01(\x0e\x32\x0e.MemoryMapping\x12\x0c\n\x04size\x18\x03 \x01(\r\"\xd6\x01\n\x12ReadMemoryResponse\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x06 \x01(\x0e\x32\x0e.MemoryMapping\x12\x15\n\rdeviceAddress\x18\x03 \x01(\r\x12)\n\x12\x64\x65viceAddressSpace\x18\x04 \x01(\x0e\x32\r.AddressSpace\x12\x0c\n\x04\x64\x61ta\x18\x05 \x01(\x0c\"\x94\x01\n\x12WriteMemoryRequest\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x04 \x01(\x0e\x32\x0e.MemoryMapping\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\xd7\x01\n\x13WriteMemoryResponse\x12\x16\n\x0erequestAddress\x18\x01 \x01(\r\x12*\n\x13requestAddressSpace\x18\x02 \x01(\x0e\x32\r.AddressSpace\x12,\n\x14requestMemoryMapping\x18\x06 \x01(\x0e\x32\x0e.MemoryMapping\x12\x15\n\rdeviceAddress\x18\x03 \x01(\r\x12)\n\x12\x64\x65viceAddressSpace\x18\x04 \x01(\x0e\x32\r.AddressSpace\x12\x0c\n\x04size\x18\x05 \x01(\r\"K\n\x17SingleReadMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12#\n\x07request\x18\x02 \x01(\x0b\x32\x12.ReadMemoryRequest\"N\n\x18SingleReadMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12%\n\x08response\x18\x02 \x01(\x0b\x32\x13.ReadMemoryResponse\"M\n\x18SingleWriteMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12$\n\x07request\x18\x02 \x01(\x0b\x32\x13.WriteMemoryRequest\"P\n\x19SingleWriteMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12&\n\x08response\x18\x02 \x01(\x0b\x32\x14.WriteMemoryResponse\"K\n\x16MultiReadMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12$\n\x08requests\x18\x02 \x03(\x0b\x32\x12.ReadMemoryRequest\"N\n\x17MultiReadMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12&\n\tresponses\x18\x02 \x03(\x0b\x32\x13.ReadMemoryResponse\"M\n\x17MultiWriteMemoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12%\n\x08requests\x18\x02 \x03(\x0b\x32\x13.WriteMemoryRequest\"P\n\x18MultiWriteMemoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\tresponses\x18\x02 \x03(\x0b\x32\x14.WriteMemoryResponse\"1\n\x14ReadDirectoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"5\n\x08\x44irEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1b\n\x04type\x18\x02 \x01(\x0e\x32\r.DirEntryType\"N\n\x15ReadDirectoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x1a\n\x07\x65ntries\x18\x03 \x03(\x0b\x32\t.DirEntry\"1\n\x14MakeDirectoryRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"2\n\x15MakeDirectoryResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\".\n\x11RemoveFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"/\n\x12RemoveFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"C\n\x11RenameFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x13\n\x0bnewFilename\x18\x03 \x01(\t\"D\n\x12RenameFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x13\n\x0bnewFilename\x18\x03 \x01(\t\"9\n\x0ePutFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\":\n\x0fPutFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\r\"+\n\x0eGetFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"H\n\x0fGetFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\",\n\x0f\x42ootFileRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"-\n\x10\x42ootFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"4\n\rFieldsRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x16\n\x06\x66ields\x18\x02 \x03(\x0e\x32\x06.Field\"E\n\x0e\x46ieldsResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x16\n\x06\x66ields\x18\x02 \x03(\x0e\x32\x06.Field\x12\x0e\n\x06values\x18\x03 \x03(\t\"e\n\x11NWACommandRequest\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x03 \x01(\t\x12\x16\n\tbinaryArg\x18\x04 \x01(\x0cH\x00\x88\x01\x01\x42\x0c\n\n_binaryArg\"\xfa\x01\n\x12NWACommandResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x34\n\nasciiReply\x18\x02 \x03(\x0b\x32 .NWACommandResponse.NWAASCIIItem\x12\x19\n\x0c\x62inaryReplay\x18\x03 \x01(\x0cH\x00\x88\x01\x01\x1au\n\x0cNWAASCIIItem\x12\x38\n\x04item\x18\x01 \x03(\x0b\x32*.NWACommandResponse.NWAASCIIItem.ItemEntry\x1a+\n\tItemEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\r_binaryReplay*3\n\x0c\x41\x64\x64ressSpace\x12\x0c\n\x08\x46xPakPro\x10\x00\x12\x0c\n\x08SnesABus\x10\x01\x12\x07\n\x03Raw\x10\x02*?\n\rMemoryMapping\x12\x0b\n\x07Unknown\x10\x00\x12\t\n\x05HiROM\x10\x01\x12\t\n\x05LoROM\x10\x02\x12\x0b\n\x07\x45xHiROM\x10\x03*\xb3\x02\n\x10\x44\x65viceCapability\x12\x08\n\x04None\x10\x00\x12\x0e\n\nReadMemory\x10\x01\x12\x0f\n\x0bWriteMemory\x10\x02\x12\x0e\n\nExecuteASM\x10\x03\x12\x0f\n\x0bResetSystem\x10\x04\x12\x19\n\x15PauseUnpauseEmulation\x10\x05\x12\x18\n\x14PauseToggleEmulation\x10\x06\x12\x0f\n\x0bResetToMenu\x10\x07\x12\x0f\n\x0b\x46\x65tchFields\x10\x08\x12\x11\n\rReadDirectory\x10\n\x12\x11\n\rMakeDirectory\x10\x0b\x12\x0e\n\nRemoveFile\x10\x0c\x12\x0e\n\nRenameFile\x10\r\x12\x0b\n\x07PutFile\x10\x0e\x12\x0b\n\x07GetFile\x10\x0f\x12\x0c\n\x08\x42ootFile\x10\x10\x12\x0e\n\nNWACommand\x10\x14*\xa1\x01\n\x05\x46ield\x12\x0e\n\nDeviceName\x10\x00\x12\x11\n\rDeviceVersion\x10\x01\x12\x10\n\x0c\x44\x65viceStatus\x10\x02\x12\x0c\n\x08\x43oreName\x10\x14\x12\x0f\n\x0b\x43oreVersion\x10\x15\x12\x10\n\x0c\x43orePlatform\x10\x16\x12\x0f\n\x0bRomFileName\x10(\x12\x0f\n\x0bRomHashType\x10)\x12\x10\n\x0cRomHashValue\x10**\'\n\x0c\x44irEntryType\x12\r\n\tDirectory\x10\x00\x12\x08\n\x04\x46ile\x10\x01\x32=\n\x07\x44\x65vices\x12\x32\n\x0bListDevices\x12\x0f.DevicesRequest\x1a\x10.DevicesResponse\"\x00\x32\xaa\x02\n\rDeviceControl\x12:\n\x0bResetSystem\x12\x13.ResetSystemRequest\x1a\x14.ResetSystemResponse\"\x00\x12:\n\x0bResetToMenu\x12\x13.ResetToMenuRequest\x1a\x14.ResetToMenuResponse\"\x00\x12J\n\x15PauseUnpauseEmulation\x12\x16.PauseEmulationRequest\x1a\x17.PauseEmulationResponse\"\x00\x12U\n\x14PauseToggleEmulation\x12\x1c.PauseToggleEmulationRequest\x1a\x1d.PauseToggleEmulationResponse\"\x00\x32\x81\x04\n\x0c\x44\x65viceMemory\x12L\n\rMappingDetect\x12\x1b.DetectMemoryMappingRequest\x1a\x1c.DetectMemoryMappingResponse\"\x00\x12\x43\n\nSingleRead\x12\x18.SingleReadMemoryRequest\x1a\x19.SingleReadMemoryResponse\"\x00\x12\x46\n\x0bSingleWrite\x12\x19.SingleWriteMemoryRequest\x1a\x1a.SingleWriteMemoryResponse\"\x00\x12@\n\tMultiRead\x12\x17.MultiReadMemoryRequest\x1a\x18.MultiReadMemoryResponse\"\x00\x12\x43\n\nMultiWrite\x12\x18.MultiWriteMemoryRequest\x1a\x19.MultiWriteMemoryResponse\"\x00\x12\x45\n\nStreamRead\x12\x17.MultiReadMemoryRequest\x1a\x18.MultiReadMemoryResponse\"\x00(\x01\x30\x01\x12H\n\x0bStreamWrite\x12\x18.MultiWriteMemoryRequest\x1a\x19.MultiWriteMemoryResponse\"\x00(\x01\x30\x01\x32\x9b\x03\n\x10\x44\x65viceFilesystem\x12@\n\rReadDirectory\x12\x15.ReadDirectoryRequest\x1a\x16.ReadDirectoryResponse\"\x00\x12@\n\rMakeDirectory\x12\x15.MakeDirectoryRequest\x1a\x16.MakeDirectoryResponse\"\x00\x12\x37\n\nRemoveFile\x12\x12.RemoveFileRequest\x1a\x13.RemoveFileResponse\"\x00\x12\x37\n\nRenameFile\x12\x12.RenameFileRequest\x1a\x13.RenameFileResponse\"\x00\x12.\n\x07PutFile\x12\x0f.PutFileRequest\x1a\x10.PutFileResponse\"\x00\x12.\n\x07GetFile\x12\x0f.GetFileRequest\x1a\x10.GetFileResponse\"\x00\x12\x31\n\x08\x42ootFile\x12\x10.BootFileRequest\x1a\x11.BootFileResponse\"\x00\x32>\n\nDeviceInfo\x12\x30\n\x0b\x46\x65tchFields\x12\x0e.FieldsRequest\x1a\x0f.FieldsResponse\"\x00\x32\x44\n\tDeviceNWA\x12\x37\n\nNWACommand\x12\x12.NWACommandRequest\x1a\x13.NWACommandResponse\"\x00\x42?\n\x15\x63om.github.alttpo.sniZ github.com/alttpo/sni/protos/sni\xaa\x02\x03SNIb\x06proto3')
 
-_ADDRESSSPACE = _descriptor.EnumDescriptor(
-  name='AddressSpace',
-  full_name='AddressSpace',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='FxPakPro', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='SnesABus', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Raw', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=3120,
-  serialized_end=3171,
-)
-_sym_db.RegisterEnumDescriptor(_ADDRESSSPACE)
-
+_ADDRESSSPACE = DESCRIPTOR.enum_types_by_name['AddressSpace']
 AddressSpace = enum_type_wrapper.EnumTypeWrapper(_ADDRESSSPACE)
-_MEMORYMAPPING = _descriptor.EnumDescriptor(
-  name='MemoryMapping',
-  full_name='MemoryMapping',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='Unknown', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='HiROM', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='LoROM', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ExHiROM', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=3173,
-  serialized_end=3236,
-)
-_sym_db.RegisterEnumDescriptor(_MEMORYMAPPING)
-
+_MEMORYMAPPING = DESCRIPTOR.enum_types_by_name['MemoryMapping']
 MemoryMapping = enum_type_wrapper.EnumTypeWrapper(_MEMORYMAPPING)
-_DEVICECAPABILITY = _descriptor.EnumDescriptor(
-  name='DeviceCapability',
-  full_name='DeviceCapability',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='None', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ReadMemory', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='WriteMemory', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ExecuteASM', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ResetSystem', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='PauseUnpauseEmulation', index=5, number=5,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='PauseToggleEmulation', index=6, number=6,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ResetToMenu', index=7, number=7,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ReadDirectory', index=8, number=10,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='MakeDirectory', index=9, number=11,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='RemoveFile', index=10, number=12,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='RenameFile', index=11, number=13,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='PutFile', index=12, number=14,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='GetFile', index=13, number=15,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BootFile', index=14, number=16,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=3239,
-  serialized_end=3513,
-)
-_sym_db.RegisterEnumDescriptor(_DEVICECAPABILITY)
-
+_DEVICECAPABILITY = DESCRIPTOR.enum_types_by_name['DeviceCapability']
 DeviceCapability = enum_type_wrapper.EnumTypeWrapper(_DEVICECAPABILITY)
-_DIRENTRYTYPE = _descriptor.EnumDescriptor(
-  name='DirEntryType',
-  full_name='DirEntryType',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='Directory', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='File', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=3515,
-  serialized_end=3554,
-)
-_sym_db.RegisterEnumDescriptor(_DIRENTRYTYPE)
-
+_FIELD = DESCRIPTOR.enum_types_by_name['Field']
+Field = enum_type_wrapper.EnumTypeWrapper(_FIELD)
+_DIRENTRYTYPE = DESCRIPTOR.enum_types_by_name['DirEntryType']
 DirEntryType = enum_type_wrapper.EnumTypeWrapper(_DIRENTRYTYPE)
 FxPakPro = 0
 SnesABus = 1
@@ -222,6 +42,7 @@ ResetSystem = 4
 PauseUnpauseEmulation = 5
 PauseToggleEmulation = 6
 ResetToMenu = 7
+FetchFields = 8
 ReadDirectory = 10
 MakeDirectory = 11
 RemoveFile = 12
@@ -229,1775 +50,66 @@ RenameFile = 13
 PutFile = 14
 GetFile = 15
 BootFile = 16
+NWACommand = 20
+DeviceName = 0
+DeviceVersion = 1
+DeviceStatus = 2
+CoreName = 20
+CoreVersion = 21
+CorePlatform = 22
+RomFileName = 40
+RomHashType = 41
+RomHashValue = 42
 Directory = 0
 File = 1
 
 
-
-_DEVICESREQUEST = _descriptor.Descriptor(
-  name='DevicesRequest',
-  full_name='DevicesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='kinds', full_name='DevicesRequest.kinds', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=13,
-  serialized_end=44,
-)
-
-
-_DEVICESRESPONSE_DEVICE = _descriptor.Descriptor(
-  name='Device',
-  full_name='DevicesResponse.Device',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='DevicesResponse.Device.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='displayName', full_name='DevicesResponse.Device.displayName', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='kind', full_name='DevicesResponse.Device.kind', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='capabilities', full_name='DevicesResponse.Device.capabilities', index=3,
-      number=4, type=14, cpp_type=8, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='defaultAddressSpace', full_name='DevicesResponse.Device.defaultAddressSpace', index=4,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=109,
-  serialized_end=250,
-)
-
-_DEVICESRESPONSE = _descriptor.Descriptor(
-  name='DevicesResponse',
-  full_name='DevicesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='devices', full_name='DevicesResponse.devices', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_DEVICESRESPONSE_DEVICE, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=47,
-  serialized_end=250,
-)
-
-
-_RESETSYSTEMREQUEST = _descriptor.Descriptor(
-  name='ResetSystemRequest',
-  full_name='ResetSystemRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='ResetSystemRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=252,
-  serialized_end=285,
-)
-
-
-_RESETSYSTEMRESPONSE = _descriptor.Descriptor(
-  name='ResetSystemResponse',
-  full_name='ResetSystemResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='ResetSystemResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=287,
-  serialized_end=321,
-)
-
-
-_RESETTOMENUREQUEST = _descriptor.Descriptor(
-  name='ResetToMenuRequest',
-  full_name='ResetToMenuRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='ResetToMenuRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=323,
-  serialized_end=356,
-)
-
-
-_RESETTOMENURESPONSE = _descriptor.Descriptor(
-  name='ResetToMenuResponse',
-  full_name='ResetToMenuResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='ResetToMenuResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=358,
-  serialized_end=392,
-)
-
-
-_PAUSEEMULATIONREQUEST = _descriptor.Descriptor(
-  name='PauseEmulationRequest',
-  full_name='PauseEmulationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='PauseEmulationRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='paused', full_name='PauseEmulationRequest.paused', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=394,
-  serialized_end=446,
-)
-
-
-_PAUSEEMULATIONRESPONSE = _descriptor.Descriptor(
-  name='PauseEmulationResponse',
-  full_name='PauseEmulationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='PauseEmulationResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='paused', full_name='PauseEmulationResponse.paused', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=448,
-  serialized_end=501,
-)
-
-
-_PAUSETOGGLEEMULATIONREQUEST = _descriptor.Descriptor(
-  name='PauseToggleEmulationRequest',
-  full_name='PauseToggleEmulationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='PauseToggleEmulationRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=503,
-  serialized_end=545,
-)
-
-
-_PAUSETOGGLEEMULATIONRESPONSE = _descriptor.Descriptor(
-  name='PauseToggleEmulationResponse',
-  full_name='PauseToggleEmulationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='PauseToggleEmulationResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=547,
-  serialized_end=590,
-)
-
-
-_DETECTMEMORYMAPPINGREQUEST = _descriptor.Descriptor(
-  name='DetectMemoryMappingRequest',
-  full_name='DetectMemoryMappingRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='DetectMemoryMappingRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='fallbackMemoryMapping', full_name='DetectMemoryMappingRequest.fallbackMemoryMapping', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='romHeader00FFB0', full_name='DetectMemoryMappingRequest.romHeader00FFB0', index=2,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='_fallbackMemoryMapping', full_name='DetectMemoryMappingRequest._fallbackMemoryMapping',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-    _descriptor.OneofDescriptor(
-      name='_romHeader00FFB0', full_name='DetectMemoryMappingRequest._romHeader00FFB0',
-      index=1, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=593,
-  serialized_end=762,
-)
-
-
-_DETECTMEMORYMAPPINGRESPONSE = _descriptor.Descriptor(
-  name='DetectMemoryMappingResponse',
-  full_name='DetectMemoryMappingResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='DetectMemoryMappingResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='memoryMapping', full_name='DetectMemoryMappingResponse.memoryMapping', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='confidence', full_name='DetectMemoryMappingResponse.confidence', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='romHeader00FFB0', full_name='DetectMemoryMappingResponse.romHeader00FFB0', index=3,
-      number=4, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=764,
-  serialized_end=890,
-)
-
-
-_READMEMORYREQUEST = _descriptor.Descriptor(
-  name='ReadMemoryRequest',
-  full_name='ReadMemoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='requestAddress', full_name='ReadMemoryRequest.requestAddress', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestAddressSpace', full_name='ReadMemoryRequest.requestAddressSpace', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestMemoryMapping', full_name='ReadMemoryRequest.requestMemoryMapping', index=2,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='ReadMemoryRequest.size', index=3,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=893,
-  serialized_end=1040,
-)
-
-
-_READMEMORYRESPONSE = _descriptor.Descriptor(
-  name='ReadMemoryResponse',
-  full_name='ReadMemoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='requestAddress', full_name='ReadMemoryResponse.requestAddress', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestAddressSpace', full_name='ReadMemoryResponse.requestAddressSpace', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestMemoryMapping', full_name='ReadMemoryResponse.requestMemoryMapping', index=2,
-      number=6, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deviceAddress', full_name='ReadMemoryResponse.deviceAddress', index=3,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deviceAddressSpace', full_name='ReadMemoryResponse.deviceAddressSpace', index=4,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='ReadMemoryResponse.data', index=5,
-      number=5, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1043,
-  serialized_end=1257,
-)
-
-
-_WRITEMEMORYREQUEST = _descriptor.Descriptor(
-  name='WriteMemoryRequest',
-  full_name='WriteMemoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='requestAddress', full_name='WriteMemoryRequest.requestAddress', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestAddressSpace', full_name='WriteMemoryRequest.requestAddressSpace', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestMemoryMapping', full_name='WriteMemoryRequest.requestMemoryMapping', index=2,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='WriteMemoryRequest.data', index=3,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1260,
-  serialized_end=1408,
-)
-
-
-_WRITEMEMORYRESPONSE = _descriptor.Descriptor(
-  name='WriteMemoryResponse',
-  full_name='WriteMemoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='requestAddress', full_name='WriteMemoryResponse.requestAddress', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestAddressSpace', full_name='WriteMemoryResponse.requestAddressSpace', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requestMemoryMapping', full_name='WriteMemoryResponse.requestMemoryMapping', index=2,
-      number=6, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deviceAddress', full_name='WriteMemoryResponse.deviceAddress', index=3,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deviceAddressSpace', full_name='WriteMemoryResponse.deviceAddressSpace', index=4,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='WriteMemoryResponse.size', index=5,
-      number=5, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1411,
-  serialized_end=1626,
-)
-
-
-_SINGLEREADMEMORYREQUEST = _descriptor.Descriptor(
-  name='SingleReadMemoryRequest',
-  full_name='SingleReadMemoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='SingleReadMemoryRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='request', full_name='SingleReadMemoryRequest.request', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1628,
-  serialized_end=1703,
-)
-
-
-_SINGLEREADMEMORYRESPONSE = _descriptor.Descriptor(
-  name='SingleReadMemoryResponse',
-  full_name='SingleReadMemoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='SingleReadMemoryResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='response', full_name='SingleReadMemoryResponse.response', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1705,
-  serialized_end=1783,
-)
-
-
-_SINGLEWRITEMEMORYREQUEST = _descriptor.Descriptor(
-  name='SingleWriteMemoryRequest',
-  full_name='SingleWriteMemoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='SingleWriteMemoryRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='request', full_name='SingleWriteMemoryRequest.request', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1785,
-  serialized_end=1862,
-)
-
-
-_SINGLEWRITEMEMORYRESPONSE = _descriptor.Descriptor(
-  name='SingleWriteMemoryResponse',
-  full_name='SingleWriteMemoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='SingleWriteMemoryResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='response', full_name='SingleWriteMemoryResponse.response', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1864,
-  serialized_end=1944,
-)
-
-
-_MULTIREADMEMORYREQUEST = _descriptor.Descriptor(
-  name='MultiReadMemoryRequest',
-  full_name='MultiReadMemoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='MultiReadMemoryRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requests', full_name='MultiReadMemoryRequest.requests', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1946,
-  serialized_end=2021,
-)
-
-
-_MULTIREADMEMORYRESPONSE = _descriptor.Descriptor(
-  name='MultiReadMemoryResponse',
-  full_name='MultiReadMemoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='MultiReadMemoryResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='responses', full_name='MultiReadMemoryResponse.responses', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2023,
-  serialized_end=2101,
-)
-
-
-_MULTIWRITEMEMORYREQUEST = _descriptor.Descriptor(
-  name='MultiWriteMemoryRequest',
-  full_name='MultiWriteMemoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='MultiWriteMemoryRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requests', full_name='MultiWriteMemoryRequest.requests', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2103,
-  serialized_end=2180,
-)
-
-
-_MULTIWRITEMEMORYRESPONSE = _descriptor.Descriptor(
-  name='MultiWriteMemoryResponse',
-  full_name='MultiWriteMemoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='MultiWriteMemoryResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='responses', full_name='MultiWriteMemoryResponse.responses', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2182,
-  serialized_end=2262,
-)
-
-
-_READDIRECTORYREQUEST = _descriptor.Descriptor(
-  name='ReadDirectoryRequest',
-  full_name='ReadDirectoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='ReadDirectoryRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='ReadDirectoryRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2264,
-  serialized_end=2313,
-)
-
-
-_DIRENTRY = _descriptor.Descriptor(
-  name='DirEntry',
-  full_name='DirEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='DirEntry.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='DirEntry.type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2315,
-  serialized_end=2368,
-)
-
-
-_READDIRECTORYRESPONSE = _descriptor.Descriptor(
-  name='ReadDirectoryResponse',
-  full_name='ReadDirectoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='ReadDirectoryResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='ReadDirectoryResponse.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='entries', full_name='ReadDirectoryResponse.entries', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2370,
-  serialized_end=2448,
-)
-
-
-_MAKEDIRECTORYREQUEST = _descriptor.Descriptor(
-  name='MakeDirectoryRequest',
-  full_name='MakeDirectoryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='MakeDirectoryRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='MakeDirectoryRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2450,
-  serialized_end=2499,
-)
-
-
-_MAKEDIRECTORYRESPONSE = _descriptor.Descriptor(
-  name='MakeDirectoryResponse',
-  full_name='MakeDirectoryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='MakeDirectoryResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='MakeDirectoryResponse.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2501,
-  serialized_end=2551,
-)
-
-
-_REMOVEFILEREQUEST = _descriptor.Descriptor(
-  name='RemoveFileRequest',
-  full_name='RemoveFileRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='RemoveFileRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='RemoveFileRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2553,
-  serialized_end=2599,
-)
-
-
-_REMOVEFILERESPONSE = _descriptor.Descriptor(
-  name='RemoveFileResponse',
-  full_name='RemoveFileResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='RemoveFileResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='RemoveFileResponse.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2601,
-  serialized_end=2648,
-)
-
-
-_RENAMEFILEREQUEST = _descriptor.Descriptor(
-  name='RenameFileRequest',
-  full_name='RenameFileRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='RenameFileRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='RenameFileRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='newFilename', full_name='RenameFileRequest.newFilename', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2650,
-  serialized_end=2717,
-)
-
-
-_RENAMEFILERESPONSE = _descriptor.Descriptor(
-  name='RenameFileResponse',
-  full_name='RenameFileResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='RenameFileResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='RenameFileResponse.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='newFilename', full_name='RenameFileResponse.newFilename', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2719,
-  serialized_end=2787,
-)
-
-
-_PUTFILEREQUEST = _descriptor.Descriptor(
-  name='PutFileRequest',
-  full_name='PutFileRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='PutFileRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='PutFileRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='PutFileRequest.data', index=2,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2789,
-  serialized_end=2846,
-)
-
-
-_PUTFILERESPONSE = _descriptor.Descriptor(
-  name='PutFileResponse',
-  full_name='PutFileResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='PutFileResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='PutFileResponse.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='PutFileResponse.size', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2848,
-  serialized_end=2906,
-)
-
-
-_GETFILEREQUEST = _descriptor.Descriptor(
-  name='GetFileRequest',
-  full_name='GetFileRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='GetFileRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='GetFileRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2908,
-  serialized_end=2951,
-)
-
-
-_GETFILERESPONSE = _descriptor.Descriptor(
-  name='GetFileResponse',
-  full_name='GetFileResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='GetFileResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='GetFileResponse.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='GetFileResponse.size', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='GetFileResponse.data', index=3,
-      number=4, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2953,
-  serialized_end=3025,
-)
-
-
-_BOOTFILEREQUEST = _descriptor.Descriptor(
-  name='BootFileRequest',
-  full_name='BootFileRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='BootFileRequest.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='BootFileRequest.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3027,
-  serialized_end=3071,
-)
-
-
-_BOOTFILERESPONSE = _descriptor.Descriptor(
-  name='BootFileResponse',
-  full_name='BootFileResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='uri', full_name='BootFileResponse.uri', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='BootFileResponse.path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3073,
-  serialized_end=3118,
-)
-
-_DEVICESRESPONSE_DEVICE.fields_by_name['capabilities'].enum_type = _DEVICECAPABILITY
-_DEVICESRESPONSE_DEVICE.fields_by_name['defaultAddressSpace'].enum_type = _ADDRESSSPACE
-_DEVICESRESPONSE_DEVICE.containing_type = _DEVICESRESPONSE
-_DEVICESRESPONSE.fields_by_name['devices'].message_type = _DEVICESRESPONSE_DEVICE
-_DETECTMEMORYMAPPINGREQUEST.fields_by_name['fallbackMemoryMapping'].enum_type = _MEMORYMAPPING
-_DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_fallbackMemoryMapping'].fields.append(
-  _DETECTMEMORYMAPPINGREQUEST.fields_by_name['fallbackMemoryMapping'])
-_DETECTMEMORYMAPPINGREQUEST.fields_by_name['fallbackMemoryMapping'].containing_oneof = _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_fallbackMemoryMapping']
-_DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_romHeader00FFB0'].fields.append(
-  _DETECTMEMORYMAPPINGREQUEST.fields_by_name['romHeader00FFB0'])
-_DETECTMEMORYMAPPINGREQUEST.fields_by_name['romHeader00FFB0'].containing_oneof = _DETECTMEMORYMAPPINGREQUEST.oneofs_by_name['_romHeader00FFB0']
-_DETECTMEMORYMAPPINGRESPONSE.fields_by_name['memoryMapping'].enum_type = _MEMORYMAPPING
-_READMEMORYREQUEST.fields_by_name['requestAddressSpace'].enum_type = _ADDRESSSPACE
-_READMEMORYREQUEST.fields_by_name['requestMemoryMapping'].enum_type = _MEMORYMAPPING
-_READMEMORYRESPONSE.fields_by_name['requestAddressSpace'].enum_type = _ADDRESSSPACE
-_READMEMORYRESPONSE.fields_by_name['requestMemoryMapping'].enum_type = _MEMORYMAPPING
-_READMEMORYRESPONSE.fields_by_name['deviceAddressSpace'].enum_type = _ADDRESSSPACE
-_WRITEMEMORYREQUEST.fields_by_name['requestAddressSpace'].enum_type = _ADDRESSSPACE
-_WRITEMEMORYREQUEST.fields_by_name['requestMemoryMapping'].enum_type = _MEMORYMAPPING
-_WRITEMEMORYRESPONSE.fields_by_name['requestAddressSpace'].enum_type = _ADDRESSSPACE
-_WRITEMEMORYRESPONSE.fields_by_name['requestMemoryMapping'].enum_type = _MEMORYMAPPING
-_WRITEMEMORYRESPONSE.fields_by_name['deviceAddressSpace'].enum_type = _ADDRESSSPACE
-_SINGLEREADMEMORYREQUEST.fields_by_name['request'].message_type = _READMEMORYREQUEST
-_SINGLEREADMEMORYRESPONSE.fields_by_name['response'].message_type = _READMEMORYRESPONSE
-_SINGLEWRITEMEMORYREQUEST.fields_by_name['request'].message_type = _WRITEMEMORYREQUEST
-_SINGLEWRITEMEMORYRESPONSE.fields_by_name['response'].message_type = _WRITEMEMORYRESPONSE
-_MULTIREADMEMORYREQUEST.fields_by_name['requests'].message_type = _READMEMORYREQUEST
-_MULTIREADMEMORYRESPONSE.fields_by_name['responses'].message_type = _READMEMORYRESPONSE
-_MULTIWRITEMEMORYREQUEST.fields_by_name['requests'].message_type = _WRITEMEMORYREQUEST
-_MULTIWRITEMEMORYRESPONSE.fields_by_name['responses'].message_type = _WRITEMEMORYRESPONSE
-_DIRENTRY.fields_by_name['type'].enum_type = _DIRENTRYTYPE
-_READDIRECTORYRESPONSE.fields_by_name['entries'].message_type = _DIRENTRY
-DESCRIPTOR.message_types_by_name['DevicesRequest'] = _DEVICESREQUEST
-DESCRIPTOR.message_types_by_name['DevicesResponse'] = _DEVICESRESPONSE
-DESCRIPTOR.message_types_by_name['ResetSystemRequest'] = _RESETSYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['ResetSystemResponse'] = _RESETSYSTEMRESPONSE
-DESCRIPTOR.message_types_by_name['ResetToMenuRequest'] = _RESETTOMENUREQUEST
-DESCRIPTOR.message_types_by_name['ResetToMenuResponse'] = _RESETTOMENURESPONSE
-DESCRIPTOR.message_types_by_name['PauseEmulationRequest'] = _PAUSEEMULATIONREQUEST
-DESCRIPTOR.message_types_by_name['PauseEmulationResponse'] = _PAUSEEMULATIONRESPONSE
-DESCRIPTOR.message_types_by_name['PauseToggleEmulationRequest'] = _PAUSETOGGLEEMULATIONREQUEST
-DESCRIPTOR.message_types_by_name['PauseToggleEmulationResponse'] = _PAUSETOGGLEEMULATIONRESPONSE
-DESCRIPTOR.message_types_by_name['DetectMemoryMappingRequest'] = _DETECTMEMORYMAPPINGREQUEST
-DESCRIPTOR.message_types_by_name['DetectMemoryMappingResponse'] = _DETECTMEMORYMAPPINGRESPONSE
-DESCRIPTOR.message_types_by_name['ReadMemoryRequest'] = _READMEMORYREQUEST
-DESCRIPTOR.message_types_by_name['ReadMemoryResponse'] = _READMEMORYRESPONSE
-DESCRIPTOR.message_types_by_name['WriteMemoryRequest'] = _WRITEMEMORYREQUEST
-DESCRIPTOR.message_types_by_name['WriteMemoryResponse'] = _WRITEMEMORYRESPONSE
-DESCRIPTOR.message_types_by_name['SingleReadMemoryRequest'] = _SINGLEREADMEMORYREQUEST
-DESCRIPTOR.message_types_by_name['SingleReadMemoryResponse'] = _SINGLEREADMEMORYRESPONSE
-DESCRIPTOR.message_types_by_name['SingleWriteMemoryRequest'] = _SINGLEWRITEMEMORYREQUEST
-DESCRIPTOR.message_types_by_name['SingleWriteMemoryResponse'] = _SINGLEWRITEMEMORYRESPONSE
-DESCRIPTOR.message_types_by_name['MultiReadMemoryRequest'] = _MULTIREADMEMORYREQUEST
-DESCRIPTOR.message_types_by_name['MultiReadMemoryResponse'] = _MULTIREADMEMORYRESPONSE
-DESCRIPTOR.message_types_by_name['MultiWriteMemoryRequest'] = _MULTIWRITEMEMORYREQUEST
-DESCRIPTOR.message_types_by_name['MultiWriteMemoryResponse'] = _MULTIWRITEMEMORYRESPONSE
-DESCRIPTOR.message_types_by_name['ReadDirectoryRequest'] = _READDIRECTORYREQUEST
-DESCRIPTOR.message_types_by_name['DirEntry'] = _DIRENTRY
-DESCRIPTOR.message_types_by_name['ReadDirectoryResponse'] = _READDIRECTORYRESPONSE
-DESCRIPTOR.message_types_by_name['MakeDirectoryRequest'] = _MAKEDIRECTORYREQUEST
-DESCRIPTOR.message_types_by_name['MakeDirectoryResponse'] = _MAKEDIRECTORYRESPONSE
-DESCRIPTOR.message_types_by_name['RemoveFileRequest'] = _REMOVEFILEREQUEST
-DESCRIPTOR.message_types_by_name['RemoveFileResponse'] = _REMOVEFILERESPONSE
-DESCRIPTOR.message_types_by_name['RenameFileRequest'] = _RENAMEFILEREQUEST
-DESCRIPTOR.message_types_by_name['RenameFileResponse'] = _RENAMEFILERESPONSE
-DESCRIPTOR.message_types_by_name['PutFileRequest'] = _PUTFILEREQUEST
-DESCRIPTOR.message_types_by_name['PutFileResponse'] = _PUTFILERESPONSE
-DESCRIPTOR.message_types_by_name['GetFileRequest'] = _GETFILEREQUEST
-DESCRIPTOR.message_types_by_name['GetFileResponse'] = _GETFILERESPONSE
-DESCRIPTOR.message_types_by_name['BootFileRequest'] = _BOOTFILEREQUEST
-DESCRIPTOR.message_types_by_name['BootFileResponse'] = _BOOTFILERESPONSE
-DESCRIPTOR.enum_types_by_name['AddressSpace'] = _ADDRESSSPACE
-DESCRIPTOR.enum_types_by_name['MemoryMapping'] = _MEMORYMAPPING
-DESCRIPTOR.enum_types_by_name['DeviceCapability'] = _DEVICECAPABILITY
-DESCRIPTOR.enum_types_by_name['DirEntryType'] = _DIRENTRYTYPE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_DEVICESREQUEST = DESCRIPTOR.message_types_by_name['DevicesRequest']
+_DEVICESRESPONSE = DESCRIPTOR.message_types_by_name['DevicesResponse']
+_DEVICESRESPONSE_DEVICE = _DEVICESRESPONSE.nested_types_by_name['Device']
+_RESETSYSTEMREQUEST = DESCRIPTOR.message_types_by_name['ResetSystemRequest']
+_RESETSYSTEMRESPONSE = DESCRIPTOR.message_types_by_name['ResetSystemResponse']
+_RESETTOMENUREQUEST = DESCRIPTOR.message_types_by_name['ResetToMenuRequest']
+_RESETTOMENURESPONSE = DESCRIPTOR.message_types_by_name['ResetToMenuResponse']
+_PAUSEEMULATIONREQUEST = DESCRIPTOR.message_types_by_name['PauseEmulationRequest']
+_PAUSEEMULATIONRESPONSE = DESCRIPTOR.message_types_by_name['PauseEmulationResponse']
+_PAUSETOGGLEEMULATIONREQUEST = DESCRIPTOR.message_types_by_name['PauseToggleEmulationRequest']
+_PAUSETOGGLEEMULATIONRESPONSE = DESCRIPTOR.message_types_by_name['PauseToggleEmulationResponse']
+_DETECTMEMORYMAPPINGREQUEST = DESCRIPTOR.message_types_by_name['DetectMemoryMappingRequest']
+_DETECTMEMORYMAPPINGRESPONSE = DESCRIPTOR.message_types_by_name['DetectMemoryMappingResponse']
+_READMEMORYREQUEST = DESCRIPTOR.message_types_by_name['ReadMemoryRequest']
+_READMEMORYRESPONSE = DESCRIPTOR.message_types_by_name['ReadMemoryResponse']
+_WRITEMEMORYREQUEST = DESCRIPTOR.message_types_by_name['WriteMemoryRequest']
+_WRITEMEMORYRESPONSE = DESCRIPTOR.message_types_by_name['WriteMemoryResponse']
+_SINGLEREADMEMORYREQUEST = DESCRIPTOR.message_types_by_name['SingleReadMemoryRequest']
+_SINGLEREADMEMORYRESPONSE = DESCRIPTOR.message_types_by_name['SingleReadMemoryResponse']
+_SINGLEWRITEMEMORYREQUEST = DESCRIPTOR.message_types_by_name['SingleWriteMemoryRequest']
+_SINGLEWRITEMEMORYRESPONSE = DESCRIPTOR.message_types_by_name['SingleWriteMemoryResponse']
+_MULTIREADMEMORYREQUEST = DESCRIPTOR.message_types_by_name['MultiReadMemoryRequest']
+_MULTIREADMEMORYRESPONSE = DESCRIPTOR.message_types_by_name['MultiReadMemoryResponse']
+_MULTIWRITEMEMORYREQUEST = DESCRIPTOR.message_types_by_name['MultiWriteMemoryRequest']
+_MULTIWRITEMEMORYRESPONSE = DESCRIPTOR.message_types_by_name['MultiWriteMemoryResponse']
+_READDIRECTORYREQUEST = DESCRIPTOR.message_types_by_name['ReadDirectoryRequest']
+_DIRENTRY = DESCRIPTOR.message_types_by_name['DirEntry']
+_READDIRECTORYRESPONSE = DESCRIPTOR.message_types_by_name['ReadDirectoryResponse']
+_MAKEDIRECTORYREQUEST = DESCRIPTOR.message_types_by_name['MakeDirectoryRequest']
+_MAKEDIRECTORYRESPONSE = DESCRIPTOR.message_types_by_name['MakeDirectoryResponse']
+_REMOVEFILEREQUEST = DESCRIPTOR.message_types_by_name['RemoveFileRequest']
+_REMOVEFILERESPONSE = DESCRIPTOR.message_types_by_name['RemoveFileResponse']
+_RENAMEFILEREQUEST = DESCRIPTOR.message_types_by_name['RenameFileRequest']
+_RENAMEFILERESPONSE = DESCRIPTOR.message_types_by_name['RenameFileResponse']
+_PUTFILEREQUEST = DESCRIPTOR.message_types_by_name['PutFileRequest']
+_PUTFILERESPONSE = DESCRIPTOR.message_types_by_name['PutFileResponse']
+_GETFILEREQUEST = DESCRIPTOR.message_types_by_name['GetFileRequest']
+_GETFILERESPONSE = DESCRIPTOR.message_types_by_name['GetFileResponse']
+_BOOTFILEREQUEST = DESCRIPTOR.message_types_by_name['BootFileRequest']
+_BOOTFILERESPONSE = DESCRIPTOR.message_types_by_name['BootFileResponse']
+_FIELDSREQUEST = DESCRIPTOR.message_types_by_name['FieldsRequest']
+_FIELDSRESPONSE = DESCRIPTOR.message_types_by_name['FieldsResponse']
+_NWACOMMANDREQUEST = DESCRIPTOR.message_types_by_name['NWACommandRequest']
+_NWACOMMANDRESPONSE = DESCRIPTOR.message_types_by_name['NWACommandResponse']
+_NWACOMMANDRESPONSE_NWAASCIIITEM = _NWACOMMANDRESPONSE.nested_types_by_name['NWAASCIIItem']
+_NWACOMMANDRESPONSE_NWAASCIIITEM_ITEMENTRY = _NWACOMMANDRESPONSE_NWAASCIIITEM.nested_types_by_name['ItemEntry']
 DevicesRequest = _reflection.GeneratedProtocolMessageType('DevicesRequest', (_message.Message,), {
   'DESCRIPTOR' : _DEVICESREQUEST,
   '__module__' : 'sni_pb2'
@@ -2279,260 +391,176 @@ BootFileResponse = _reflection.GeneratedProtocolMessageType('BootFileResponse', 
   })
 _sym_db.RegisterMessage(BootFileResponse)
 
+FieldsRequest = _reflection.GeneratedProtocolMessageType('FieldsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _FIELDSREQUEST,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:FieldsRequest)
+  })
+_sym_db.RegisterMessage(FieldsRequest)
 
-DESCRIPTOR._options = None
+FieldsResponse = _reflection.GeneratedProtocolMessageType('FieldsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _FIELDSRESPONSE,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:FieldsResponse)
+  })
+_sym_db.RegisterMessage(FieldsResponse)
 
-_DEVICES = _descriptor.ServiceDescriptor(
-  name='Devices',
-  full_name='Devices',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=3556,
-  serialized_end=3617,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ListDevices',
-    full_name='Devices.ListDevices',
-    index=0,
-    containing_service=None,
-    input_type=_DEVICESREQUEST,
-    output_type=_DEVICESRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DEVICES)
+NWACommandRequest = _reflection.GeneratedProtocolMessageType('NWACommandRequest', (_message.Message,), {
+  'DESCRIPTOR' : _NWACOMMANDREQUEST,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:NWACommandRequest)
+  })
+_sym_db.RegisterMessage(NWACommandRequest)
 
-DESCRIPTOR.services_by_name['Devices'] = _DEVICES
+NWACommandResponse = _reflection.GeneratedProtocolMessageType('NWACommandResponse', (_message.Message,), {
 
+  'NWAASCIIItem' : _reflection.GeneratedProtocolMessageType('NWAASCIIItem', (_message.Message,), {
 
-_DEVICECONTROL = _descriptor.ServiceDescriptor(
-  name='DeviceControl',
-  full_name='DeviceControl',
-  file=DESCRIPTOR,
-  index=1,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=3620,
-  serialized_end=3918,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ResetSystem',
-    full_name='DeviceControl.ResetSystem',
-    index=0,
-    containing_service=None,
-    input_type=_RESETSYSTEMREQUEST,
-    output_type=_RESETSYSTEMRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ResetToMenu',
-    full_name='DeviceControl.ResetToMenu',
-    index=1,
-    containing_service=None,
-    input_type=_RESETTOMENUREQUEST,
-    output_type=_RESETTOMENURESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='PauseUnpauseEmulation',
-    full_name='DeviceControl.PauseUnpauseEmulation',
-    index=2,
-    containing_service=None,
-    input_type=_PAUSEEMULATIONREQUEST,
-    output_type=_PAUSEEMULATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='PauseToggleEmulation',
-    full_name='DeviceControl.PauseToggleEmulation',
-    index=3,
-    containing_service=None,
-    input_type=_PAUSETOGGLEEMULATIONREQUEST,
-    output_type=_PAUSETOGGLEEMULATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DEVICECONTROL)
+    'ItemEntry' : _reflection.GeneratedProtocolMessageType('ItemEntry', (_message.Message,), {
+      'DESCRIPTOR' : _NWACOMMANDRESPONSE_NWAASCIIITEM_ITEMENTRY,
+      '__module__' : 'sni_pb2'
+      # @@protoc_insertion_point(class_scope:NWACommandResponse.NWAASCIIItem.ItemEntry)
+      })
+    ,
+    'DESCRIPTOR' : _NWACOMMANDRESPONSE_NWAASCIIITEM,
+    '__module__' : 'sni_pb2'
+    # @@protoc_insertion_point(class_scope:NWACommandResponse.NWAASCIIItem)
+    })
+  ,
+  'DESCRIPTOR' : _NWACOMMANDRESPONSE,
+  '__module__' : 'sni_pb2'
+  # @@protoc_insertion_point(class_scope:NWACommandResponse)
+  })
+_sym_db.RegisterMessage(NWACommandResponse)
+_sym_db.RegisterMessage(NWACommandResponse.NWAASCIIItem)
+_sym_db.RegisterMessage(NWACommandResponse.NWAASCIIItem.ItemEntry)
 
-DESCRIPTOR.services_by_name['DeviceControl'] = _DEVICECONTROL
+_DEVICES = DESCRIPTOR.services_by_name['Devices']
+_DEVICECONTROL = DESCRIPTOR.services_by_name['DeviceControl']
+_DEVICEMEMORY = DESCRIPTOR.services_by_name['DeviceMemory']
+_DEVICEFILESYSTEM = DESCRIPTOR.services_by_name['DeviceFilesystem']
+_DEVICEINFO = DESCRIPTOR.services_by_name['DeviceInfo']
+_DEVICENWA = DESCRIPTOR.services_by_name['DeviceNWA']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-_DEVICEMEMORY = _descriptor.ServiceDescriptor(
-  name='DeviceMemory',
-  full_name='DeviceMemory',
-  file=DESCRIPTOR,
-  index=2,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=3921,
-  serialized_end=4434,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='MappingDetect',
-    full_name='DeviceMemory.MappingDetect',
-    index=0,
-    containing_service=None,
-    input_type=_DETECTMEMORYMAPPINGREQUEST,
-    output_type=_DETECTMEMORYMAPPINGRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SingleRead',
-    full_name='DeviceMemory.SingleRead',
-    index=1,
-    containing_service=None,
-    input_type=_SINGLEREADMEMORYREQUEST,
-    output_type=_SINGLEREADMEMORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SingleWrite',
-    full_name='DeviceMemory.SingleWrite',
-    index=2,
-    containing_service=None,
-    input_type=_SINGLEWRITEMEMORYREQUEST,
-    output_type=_SINGLEWRITEMEMORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='MultiRead',
-    full_name='DeviceMemory.MultiRead',
-    index=3,
-    containing_service=None,
-    input_type=_MULTIREADMEMORYREQUEST,
-    output_type=_MULTIREADMEMORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='MultiWrite',
-    full_name='DeviceMemory.MultiWrite',
-    index=4,
-    containing_service=None,
-    input_type=_MULTIWRITEMEMORYREQUEST,
-    output_type=_MULTIWRITEMEMORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='StreamRead',
-    full_name='DeviceMemory.StreamRead',
-    index=5,
-    containing_service=None,
-    input_type=_MULTIREADMEMORYREQUEST,
-    output_type=_MULTIREADMEMORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='StreamWrite',
-    full_name='DeviceMemory.StreamWrite',
-    index=6,
-    containing_service=None,
-    input_type=_MULTIWRITEMEMORYREQUEST,
-    output_type=_MULTIWRITEMEMORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DEVICEMEMORY)
-
-DESCRIPTOR.services_by_name['DeviceMemory'] = _DEVICEMEMORY
-
-
-_DEVICEFILESYSTEM = _descriptor.ServiceDescriptor(
-  name='DeviceFilesystem',
-  full_name='DeviceFilesystem',
-  file=DESCRIPTOR,
-  index=3,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=4437,
-  serialized_end=4848,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ReadDirectory',
-    full_name='DeviceFilesystem.ReadDirectory',
-    index=0,
-    containing_service=None,
-    input_type=_READDIRECTORYREQUEST,
-    output_type=_READDIRECTORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='MakeDirectory',
-    full_name='DeviceFilesystem.MakeDirectory',
-    index=1,
-    containing_service=None,
-    input_type=_MAKEDIRECTORYREQUEST,
-    output_type=_MAKEDIRECTORYRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RemoveFile',
-    full_name='DeviceFilesystem.RemoveFile',
-    index=2,
-    containing_service=None,
-    input_type=_REMOVEFILEREQUEST,
-    output_type=_REMOVEFILERESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RenameFile',
-    full_name='DeviceFilesystem.RenameFile',
-    index=3,
-    containing_service=None,
-    input_type=_RENAMEFILEREQUEST,
-    output_type=_RENAMEFILERESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='PutFile',
-    full_name='DeviceFilesystem.PutFile',
-    index=4,
-    containing_service=None,
-    input_type=_PUTFILEREQUEST,
-    output_type=_PUTFILERESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetFile',
-    full_name='DeviceFilesystem.GetFile',
-    index=5,
-    containing_service=None,
-    input_type=_GETFILEREQUEST,
-    output_type=_GETFILERESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='BootFile',
-    full_name='DeviceFilesystem.BootFile',
-    index=6,
-    containing_service=None,
-    input_type=_BOOTFILEREQUEST,
-    output_type=_BOOTFILERESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DEVICEFILESYSTEM)
-
-DESCRIPTOR.services_by_name['DeviceFilesystem'] = _DEVICEFILESYSTEM
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\025com.github.alttpo.sniZ github.com/alttpo/sni/protos/sni\252\002\003SNI'
+  _DEVICESRESPONSE_DEVICE.fields_by_name['system']._options = None
+  _DEVICESRESPONSE_DEVICE.fields_by_name['system']._serialized_options = b'\030\001'
+  _NWACOMMANDRESPONSE_NWAASCIIITEM_ITEMENTRY._options = None
+  _NWACOMMANDRESPONSE_NWAASCIIITEM_ITEMENTRY._serialized_options = b'8\001'
+  _ADDRESSSPACE._serialized_start=3621
+  _ADDRESSSPACE._serialized_end=3672
+  _MEMORYMAPPING._serialized_start=3674
+  _MEMORYMAPPING._serialized_end=3737
+  _DEVICECAPABILITY._serialized_start=3740
+  _DEVICECAPABILITY._serialized_end=4047
+  _FIELD._serialized_start=4050
+  _FIELD._serialized_end=4211
+  _DIRENTRYTYPE._serialized_start=4213
+  _DIRENTRYTYPE._serialized_end=4252
+  _DEVICESREQUEST._serialized_start=13
+  _DEVICESREQUEST._serialized_end=44
+  _DEVICESRESPONSE._serialized_start=47
+  _DEVICESRESPONSE._serialized_end=270
+  _DEVICESRESPONSE_DEVICE._serialized_start=109
+  _DEVICESRESPONSE_DEVICE._serialized_end=270
+  _RESETSYSTEMREQUEST._serialized_start=272
+  _RESETSYSTEMREQUEST._serialized_end=305
+  _RESETSYSTEMRESPONSE._serialized_start=307
+  _RESETSYSTEMRESPONSE._serialized_end=341
+  _RESETTOMENUREQUEST._serialized_start=343
+  _RESETTOMENUREQUEST._serialized_end=376
+  _RESETTOMENURESPONSE._serialized_start=378
+  _RESETTOMENURESPONSE._serialized_end=412
+  _PAUSEEMULATIONREQUEST._serialized_start=414
+  _PAUSEEMULATIONREQUEST._serialized_end=466
+  _PAUSEEMULATIONRESPONSE._serialized_start=468
+  _PAUSEEMULATIONRESPONSE._serialized_end=521
+  _PAUSETOGGLEEMULATIONREQUEST._serialized_start=523
+  _PAUSETOGGLEEMULATIONREQUEST._serialized_end=565
+  _PAUSETOGGLEEMULATIONRESPONSE._serialized_start=567
+  _PAUSETOGGLEEMULATIONRESPONSE._serialized_end=610
+  _DETECTMEMORYMAPPINGREQUEST._serialized_start=613
+  _DETECTMEMORYMAPPINGREQUEST._serialized_end=782
+  _DETECTMEMORYMAPPINGRESPONSE._serialized_start=784
+  _DETECTMEMORYMAPPINGRESPONSE._serialized_end=910
+  _READMEMORYREQUEST._serialized_start=913
+  _READMEMORYREQUEST._serialized_end=1060
+  _READMEMORYRESPONSE._serialized_start=1063
+  _READMEMORYRESPONSE._serialized_end=1277
+  _WRITEMEMORYREQUEST._serialized_start=1280
+  _WRITEMEMORYREQUEST._serialized_end=1428
+  _WRITEMEMORYRESPONSE._serialized_start=1431
+  _WRITEMEMORYRESPONSE._serialized_end=1646
+  _SINGLEREADMEMORYREQUEST._serialized_start=1648
+  _SINGLEREADMEMORYREQUEST._serialized_end=1723
+  _SINGLEREADMEMORYRESPONSE._serialized_start=1725
+  _SINGLEREADMEMORYRESPONSE._serialized_end=1803
+  _SINGLEWRITEMEMORYREQUEST._serialized_start=1805
+  _SINGLEWRITEMEMORYREQUEST._serialized_end=1882
+  _SINGLEWRITEMEMORYRESPONSE._serialized_start=1884
+  _SINGLEWRITEMEMORYRESPONSE._serialized_end=1964
+  _MULTIREADMEMORYREQUEST._serialized_start=1966
+  _MULTIREADMEMORYREQUEST._serialized_end=2041
+  _MULTIREADMEMORYRESPONSE._serialized_start=2043
+  _MULTIREADMEMORYRESPONSE._serialized_end=2121
+  _MULTIWRITEMEMORYREQUEST._serialized_start=2123
+  _MULTIWRITEMEMORYREQUEST._serialized_end=2200
+  _MULTIWRITEMEMORYRESPONSE._serialized_start=2202
+  _MULTIWRITEMEMORYRESPONSE._serialized_end=2282
+  _READDIRECTORYREQUEST._serialized_start=2284
+  _READDIRECTORYREQUEST._serialized_end=2333
+  _DIRENTRY._serialized_start=2335
+  _DIRENTRY._serialized_end=2388
+  _READDIRECTORYRESPONSE._serialized_start=2390
+  _READDIRECTORYRESPONSE._serialized_end=2468
+  _MAKEDIRECTORYREQUEST._serialized_start=2470
+  _MAKEDIRECTORYREQUEST._serialized_end=2519
+  _MAKEDIRECTORYRESPONSE._serialized_start=2521
+  _MAKEDIRECTORYRESPONSE._serialized_end=2571
+  _REMOVEFILEREQUEST._serialized_start=2573
+  _REMOVEFILEREQUEST._serialized_end=2619
+  _REMOVEFILERESPONSE._serialized_start=2621
+  _REMOVEFILERESPONSE._serialized_end=2668
+  _RENAMEFILEREQUEST._serialized_start=2670
+  _RENAMEFILEREQUEST._serialized_end=2737
+  _RENAMEFILERESPONSE._serialized_start=2739
+  _RENAMEFILERESPONSE._serialized_end=2807
+  _PUTFILEREQUEST._serialized_start=2809
+  _PUTFILEREQUEST._serialized_end=2866
+  _PUTFILERESPONSE._serialized_start=2868
+  _PUTFILERESPONSE._serialized_end=2926
+  _GETFILEREQUEST._serialized_start=2928
+  _GETFILEREQUEST._serialized_end=2971
+  _GETFILERESPONSE._serialized_start=2973
+  _GETFILERESPONSE._serialized_end=3045
+  _BOOTFILEREQUEST._serialized_start=3047
+  _BOOTFILEREQUEST._serialized_end=3091
+  _BOOTFILERESPONSE._serialized_start=3093
+  _BOOTFILERESPONSE._serialized_end=3138
+  _FIELDSREQUEST._serialized_start=3140
+  _FIELDSREQUEST._serialized_end=3192
+  _FIELDSRESPONSE._serialized_start=3194
+  _FIELDSRESPONSE._serialized_end=3263
+  _NWACOMMANDREQUEST._serialized_start=3265
+  _NWACOMMANDREQUEST._serialized_end=3366
+  _NWACOMMANDRESPONSE._serialized_start=3369
+  _NWACOMMANDRESPONSE._serialized_end=3619
+  _NWACOMMANDRESPONSE_NWAASCIIITEM._serialized_start=3485
+  _NWACOMMANDRESPONSE_NWAASCIIITEM._serialized_end=3602
+  _NWACOMMANDRESPONSE_NWAASCIIITEM_ITEMENTRY._serialized_start=3559
+  _NWACOMMANDRESPONSE_NWAASCIIITEM_ITEMENTRY._serialized_end=3602
+  _DEVICES._serialized_start=4254
+  _DEVICES._serialized_end=4315
+  _DEVICECONTROL._serialized_start=4318
+  _DEVICECONTROL._serialized_end=4616
+  _DEVICEMEMORY._serialized_start=4619
+  _DEVICEMEMORY._serialized_end=5132
+  _DEVICEFILESYSTEM._serialized_start=5135
+  _DEVICEFILESYSTEM._serialized_end=5546
+  _DEVICEINFO._serialized_start=5548
+  _DEVICEINFO._serialized_end=5610
+  _DEVICENWA._serialized_start=5612
+  _DEVICENWA._serialized_end=5680
 # @@protoc_insertion_point(module_scope)

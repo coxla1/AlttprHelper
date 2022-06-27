@@ -766,3 +766,125 @@ class DeviceFilesystem(object):
             sni__pb2.BootFileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class DeviceInfoStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.FetchFields = channel.unary_unary(
+                '/DeviceInfo/FetchFields',
+                request_serializer=sni__pb2.FieldsRequest.SerializeToString,
+                response_deserializer=sni__pb2.FieldsResponse.FromString,
+                )
+
+
+class DeviceInfoServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def FetchFields(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_DeviceInfoServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'FetchFields': grpc.unary_unary_rpc_method_handler(
+                    servicer.FetchFields,
+                    request_deserializer=sni__pb2.FieldsRequest.FromString,
+                    response_serializer=sni__pb2.FieldsResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'DeviceInfo', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class DeviceInfo(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def FetchFields(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/DeviceInfo/FetchFields',
+            sni__pb2.FieldsRequest.SerializeToString,
+            sni__pb2.FieldsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class DeviceNWAStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.NWACommand = channel.unary_unary(
+                '/DeviceNWA/NWACommand',
+                request_serializer=sni__pb2.NWACommandRequest.SerializeToString,
+                response_deserializer=sni__pb2.NWACommandResponse.FromString,
+                )
+
+
+class DeviceNWAServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def NWACommand(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_DeviceNWAServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'NWACommand': grpc.unary_unary_rpc_method_handler(
+                    servicer.NWACommand,
+                    request_deserializer=sni__pb2.NWACommandRequest.FromString,
+                    response_serializer=sni__pb2.NWACommandResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'DeviceNWA', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class DeviceNWA(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def NWACommand(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/DeviceNWA/NWACommand',
+            sni__pb2.NWACommandRequest.SerializeToString,
+            sni__pb2.NWACommandResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
