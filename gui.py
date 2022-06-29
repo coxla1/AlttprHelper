@@ -325,6 +325,35 @@ buttons['usb-interface'].grid(row=m, column=2)
 
 m += 1
 
+
+# - Input viewer
+labels['input-viewer'] = tk.Label(
+    frames['misc'],
+    text='Input viewer',
+    width=LBL_WIDTH,
+    anchor=tk.W
+)
+labels['input-viewer'].grid(row=m, column=0)
+
+variables['input-viewer'] = tk.StringVar()
+defaults['input-viewer'] = 'Optional'
+inputs['input-viewer'] = tk.Entry(
+    frames['misc'],
+    width=ENTRY_WIDTH,
+    exportselection=False,
+    textvariable=variables['input-viewer']
+)
+inputs['input-viewer'].grid(row=m, column=1)
+
+buttons['input-viewer'] = tk.Button(
+    frames['misc'],
+    text='...',
+    width=BTN_WIDTH,
+)
+buttons['input-viewer'].grid(row=m, column=2)
+
+m += 1
+
 # - Tracker
 labels['tracker'] = tk.Label(
     frames['misc'],
@@ -787,6 +816,10 @@ buttons['door-tracker'].configure(command=lambda: utils.set_path(
 buttons['usb-interface'].configure(command=lambda: utils.set_path(
     variables['usb-interface'],
     inputs['usb-interface'],
+    0))
+buttons['input-viewer'].configure(command=lambda: utils.set_path(
+    variables['input-viewer'],
+    inputs['input-viewer'],
     0))
 inputs['mode'][0].configure(command=lambda: utils.switch_frame(
     frames['transfer'].winfo_children(),
