@@ -486,6 +486,19 @@ inputs['autostart']['usb-interface'] = tk.Checkbutton(
 )
 inputs['autostart']['usb-interface'].grid(row=0, column=m)
 
+m += 1
+
+# - USB Interface
+variables['autostart']['input-viewer'] = tk.IntVar()
+inputs['autostart']['input-viewer'] = tk.Checkbutton(
+    frames['autostart'],
+    text='Input viewer',
+    variable=variables['autostart']['input-viewer'],
+    onvalue=1,
+    offvalue=0
+)
+inputs['autostart']['input-viewer'].grid(row=0, column=m)
+
 m = 0
 
 # - Tracker
