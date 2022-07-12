@@ -27,6 +27,7 @@ I haven't tested it personally, but I'm confident that the soft is cross-platfor
 - The remaining options are not necessary, set them accordingly (you can use URL for trackers too, e.g. https://alttprtracker.dunka.net/)
 
 /!\ Boot ROM is currently not working with USB transfer (it does work, but then SNI disconnects and it's a mess if you want to use autotracking)
+If using an FXPak/SD2SNES, please use at least SNI v0.0.81-pre (the -pre is important !)
 
 # How to use it?
 1. Download your seed as an `.sfc` file (works from everywhere: main site, kara fork, door branch, ...), and add it in the seed path entry.

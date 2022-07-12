@@ -82,9 +82,8 @@ def send_file(uri, path, data):
 def boot_rom(uri, path):
     with grpc.insecure_channel('localhost:8191') as channel:
         stub = sni_grpc.DeviceFilesystemStub(channel)
-        try:
-            stub.BootFile(sni.BootFileRequest(uri=uri, path=path))
-        except grpc._channel._InactiveRpcError as e:
-            # TODO : this is where shit happens
-            lg.warning(f'SNI raises an error, but I suspect it to be good: {e}')
+        stub.BootFile(sni.BootFileRequest(uri=uri, path=path))
+        # except grpc._channel._InactiveRpcError as e:
+        #     # TODO : this is where shit happens
+        #     lg.warning(f'SNI raises an error, but I suspect it to be good: {e}')
         channel.close()

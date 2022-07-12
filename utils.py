@@ -355,6 +355,13 @@ def run(variables, defaults, log):
         t_usbinterface = Thread(variables['usb-interface'].get())
         t_usbinterface.start()
 
+    # Autostart Input viewer
+    if (variables['autostart']['input-viewer'].get()
+            and not check_default_text(variables['input-viewer'].get(), defaults['input-viewer'])
+            and not check_process(variables['input-viewer'].get(), 0)):
+        t_inputviewer = Thread(variables['input-viewer'].get())
+        t_inputviewer.start()
+
     # Autostart tracker
     if (variables['autostart']['tracker'].get()
             and not check_default_text(variables['tracker'].get(), defaults['tracker'])):
